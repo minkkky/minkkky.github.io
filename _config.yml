@@ -6,8 +6,8 @@ google_analytics: # Tracking ID, e.g. "UA-000000-01"
 
 # Author
 author:
-  name: 노을
-  desc: 안녕하세요!
+  name: Noh Eul
+  desc: 
   email: moistest.ink@gmail.com
   selfie: assets/img/profile.jpg
 
@@ -29,11 +29,11 @@ social:
   soundcloud:
   stack_exchange:
   steam:
-  tumblr:
+  tumblr: 
   gitlab:
   twitter: 
   vimeo:
-  wordpress: https://moist-ink.tistory.com
+  wordpress: 
   youtube:
   default_txt: "Follow On"
 

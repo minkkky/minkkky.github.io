@@ -18,9 +18,10 @@ layout: about
 * 내일배움캠프 (2022-04-18 ~ 2022-08-18)
   * 실무형 AI 웹 개발자 과정 수료
   * 기간 중 팀 프로젝트 진행
- [![GitHub](https://img.shields.io/badge/-Team GitHub-181717?style=flat-square&logo=GitHub&logoColor=white)](https://github.com/cmjcum)
+ [![GitHub](https://img.shields.io/badge/-Team GitHub-FF9800?style=flat-square&logo=GitHub&logoColor=black)](https://github.com/cmjcum)
 
 <br/>
 
 # About me
 [![](https://img.shields.io/badge/-Blog-000000?style=flat-square&logo=Tistory&logoColor=white)](https://moist-ink.tistory.com/)
+[![Solved.ac](http://mazassumnida.wtf/api/generate_badge?boj=mp98dl4)](https://solved.ac/profile/mp98dl4)

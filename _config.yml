@@ -1,5 +1,5 @@
 # Site settings
-title: A.P
+title: Minkkky
 baseurl: "/ap"
 url: "https://minkkky.github.io"
 google_analytics: # Tracking ID, e.g. "UA-000000-01"
@@ -7,9 +7,9 @@ google_analytics: # Tracking ID, e.g. "UA-000000-01"
 # Author
 author:
   name: Noh Eul
-  desc: 
+  desc: 서브컬처에 관심이 많은 주니어 개발자
   email: moistest.ink@gmail.com
-  selfie: assets/img/profile.jpg
+  selfie: assets/img/notbad.gif
 
 # social
 social:

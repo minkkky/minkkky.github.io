@@ -34,7 +34,7 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 |:---|:---|
 ||[`🔗 portfolio/Make-Migrations`](/2022-07-07/WM)|
 |**Desc**|딥페이크를 이용한 움직이는 사진이 들어간 시민증을 제작해주며, 마이룸 꾸미기 기능을 제공하는 커뮤니티 사이트|
-|**Tech**|`python`, `django`, `javascript`, `DRF`, `deepfake`, `docker`, `AWS`, `postgeSQL`|
+|**Tech**|`python`, `django`, `javascript`, `DRF`, `deepfake`, `docker`, `AWS`, `postgreSQL`|
 |**Duration&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**|2022-07-07 ~ 2022-08-16|
 |**Github**|[`🔗front`](https://github.com/cmjcum/WM_front) \| [`🔗back`](https://github.com/cmjcum/WM_back)|
 
@@ -53,7 +53,7 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 |_Project 2._|[팀 프로젝트]&nbsp;🤖&nbsp;웹소설 일타강사 AI의 기막힌 추천|
 |:---|:---|
 ||[`🔗 portfolio/webtachu`](/2022-06-02/webtachu)|
-|**Desc**|자연어 처리를 이용해 웹소설의 스토리를 벡터 임베딩하여 \사용자가 좋아한 작품의 줄거리와 유사도가 높은 작품을 추천해주는 서비스|
+|**Desc**|자연어 처리를 이용해 웹소설의 스토리를 벡터 임베딩하여 사용자가 좋아한 작품의 줄거리와 유사도가 높은 작품을 추천해주는 서비스|
 |**Tech**|`python`, `django`, `MeCab`, `Doc2Vec`|
 |**Duration&nbsp;&nbsp;&nbsp;&nbsp;**|2022-06-02 ~ 2022-06-13|
 |**Github**|[`🔗link`](https://github.com/cmjcum/webtachu)|

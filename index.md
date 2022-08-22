@@ -11,13 +11,25 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 
 ## Skill
 
-|**Code**|![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=Python&logoColor=white)|![Django](https://img.shields.io/badge/-Django-092E20?style=flat-square&logo=Django&logoColor=white)||
-|:---:|:---:|:---:|:---:|
-|**Design**|![HTML](https://img.shields.io/badge/-HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white)|![CSS](https://img.shields.io/badge/-CSS-1572B6?style=flat-square&logo=CSS3&logoColor=white)|![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?style=flat-square&logo=Bootstrap&logoColor=white)|
-|**DB**|![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white)|![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white)||
-|**Tools**|![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=GitHub&logoColor=white)|![Visual Studio Code](https://img.shields.io/badge/-VSCode-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white)|![Postman](https://img.shields.io/badge/-Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white)|
+|:---|---|---|---|
+|**Code** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=Python&logoColor=white)|![Django](https://img.shields.io/badge/-Django-092E20?style=for-the-badge&logo=Django&logoColor=white)||
+|**Design** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|![HTML](https://img.shields.io/badge/-HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white)|![CSS](https://img.shields.io/badge/-CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white)|![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white)|
+|**DB** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white)|![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white)||
+|**Tools** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white)|![Visual Studio Code](https://img.shields.io/badge/-VSCode-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=white)|![Postman](https://img.shields.io/badge/-Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)|
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=minkkky&layout=compact)](https://github.com/minkkky/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=minkkky&layout=compact)](https://github.com/minkkky)
+
+<br/>
+
+# Projects
+* **Make Migrations**
+  * 
+* **녹턴앨리 지하 2층 불법입학센터**
+  * 
+* **웹소설 일타강사 AI의 기막힌 추천**
+  * 
+* **Jellymodi**
+  * 
 
 <br/>
 
@@ -29,5 +41,5 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 
 <br/>
 
-# Interst
+# Interests
 [![Solved.ac](http://mazassumnida.wtf/api/generate_badge?boj=mp98dl4)](https://solved.ac/profile/mp98dl4)

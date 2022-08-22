@@ -10,8 +10,10 @@ body {
   padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+
 html {
-  font-family: $serif-primary;
+  font-family: 'Gowun Dodum', $serif-primary;
   font-size: 14px;
 
   @media (min-width: 600px) {
@@ -30,7 +32,7 @@ h4,
 h5,
 h6 {
   color: $default-shade;
-  font-family: $sans-serif;
+  font-family: 'Gowun Dodum', $sans-serif;
   line-height: normal;
 }
 
@@ -38,8 +40,9 @@ li,
 ul,
 p {
   color: $default-shade;
-  font-family: $sans-serif;
+  font-family: 'Gowun Dodum', $sans-serif;
   line-height: normal;
+
 }
 
 li,

@@ -3,7 +3,7 @@ layout: about
 ---
 
 # About me
-[![](https://img.shields.io/badge/-Blog-000000?style=flat-square&logo=Tistory&logoColor=white)](https://moist-ink.tistory.com/)
+[![](https://img.shields.io/badge/-Blog-000000?style=square&logo=Tistory&logoColor=white)](https://moist-ink.tistory.com/)
 서브컬처에 관심이 많은 주니어 백엔드 개발자🌱입니다.<br/>
 Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝트를 진행했습니다.
 
@@ -17,6 +17,8 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 |**DB**|![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white)|![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white)||
 |**Tools**|![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=GitHub&logoColor=white)|![Visual Studio Code](https://img.shields.io/badge/-VSCode-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white)|![Postman](https://img.shields.io/badge/-Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white)|
 
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=minkkky&layout=compact)](https://github.com/minkkky/github-readme-stats)
+
 <br/>
 
 # Career
@@ -27,6 +29,5 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 
 <br/>
 
-|[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=minkkky&layout=compact)](https://github.com/minkkky/github-readme-stats)|[![Solved.ac](http://mazassumnida.wtf/api/generate_badge?boj=mp98dl4)](https://solved.ac/profile/mp98dl4)|
-|---|---|
-|||
+# Interst
+[![Solved.ac](http://mazassumnida.wtf/api/generate_badge?boj=mp98dl4)](https://solved.ac/profile/mp98dl4)

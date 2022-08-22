@@ -4,7 +4,8 @@ layout: about
 
 # About me
 서브컬처에 관심이 많은 주니어 백엔드 개발자🌱입니다.<br/>
-Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝트를 진행했습니다.
+Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝트를 진행했습니다.  
+사진은 딥페이크로 움직이게 만든 젤리티콘!
 
 ## Contact
 
@@ -29,49 +30,53 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 
 # Projects
 
-|Project 4.|🚀 Make Migrations [▷](/2022-07-07/WM)|
+|_Project 4._|[팀 프로젝트]&nbsp;🚀&nbsp;Make Migrations|
 |:---|:---|
-|**📄 Desc**|딥페이크를 이용한 움직이는 사진이 들어간 시민증을 제작해주며, 마이룸 꾸미기 기능을 제공하는 커뮤니티 사이트|
-|**📅 Duration** &nbsp;&nbsp;&nbsp;|2022-07-07 ~ 2022-08-16|
-|**⚙️ Tech**|python, django, DRF, deepfake, docker, AWS, git actions|
-|**🏷️ Github**|[🔗front](https://github.com/cmjcum/WM_front){:target="_blank"} / [🔗back](https://github.com/cmjcum/WM_back){:target="_blank"}|
+||[`🔗 portfolio/Make-Migrations`](/2022-07-07/WM)|
+|**Desc**|딥페이크를 이용한 움직이는 사진이 들어간 시민증을 제작해주며, 마이룸 꾸미기 기능을 제공하는 커뮤니티 사이트|
+|**Tech**|`python`, `django`, `javascript`, `DRF`, `deepfake`, `docker`, `AWS`, `postgeSQL`|
+|**Duration&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**|2022-07-07 ~ 2022-08-16|
+|**Github**|[`🔗front`](https://github.com/cmjcum/WM_front) \| [`🔗back`](https://github.com/cmjcum/WM_back)|
 
 <br/>
 
-|Project 3.|🎩 녹턴앨리 지하 2층 불법입학센터|
+|_Project 3._|[팀 프로젝트]&nbsp;🎩&nbsp;녹턴앨리 지하 2층 불법입학센터|
 |:---|:---|
-|**📄 Desc**|딥페이크와 스타일 트랜스퍼 이용해 사진을 해리포터의 초상화처럼 움직이게 만들고, 간단한 퀴즈를 통해 나의 기숙사를 배정해주는 서비스|
-|**📅 Duration** &nbsp;&nbsp;&nbsp;|2022-06-27 ~ 2022-07-04|
-|**⚙️ Tech**|python, django, DRF, deepfake, style transfer|
-|**🏷️ Github**|[🔗front](https://github.com/cmjcum/200ok_frontend){:target="_blank"} / [🔗back](https://github.com/cmjcum/200ok_backend){:target="_blank"}|
+||[`🔗 portfolio/200ok`](/2022-06-27/200ok)|
+|**Desc**|딥페이크와 스타일 트랜스퍼 이용해 사진을 해리포터의 초상화처럼 움직이게 만들고, 간단한 퀴즈를 통해 나의 기숙사를 배정해주는 서비스|
+|**Tech**|`python`, `django`, `DRF`, `deepfake`, `style transfer`|
+|**Duration&nbsp;&nbsp;&nbsp;&nbsp;**|2022-06-27 ~ 2022-07-04|
+|**Github**|[`🔗front`](https://github.com/cmjcum/200ok_frontend) \| [`🔗back`](https://github.com/cmjcum/200ok_backend)|
 
 <br/>
 
-|Project 2.|🤖 웹소설 일타강사 AI의 기막힌 추천|
+|_Project 2._|[팀 프로젝트]&nbsp;🤖&nbsp;웹소설 일타강사 AI의 기막힌 추천|
 |:---|:---|
-|**📄 Desc**|자연어 처리를 이용해 웹소설의 스토리를 벡터 임베딩하여 \사용자가 좋아한 작품의 줄거리와 유사도가 높은 작품을 추천해주는 서비스|
-|**📅 Duration** &nbsp;&nbsp;&nbsp;|2022-06-02 ~ 2022-06-13|
-|**⚙️ Tech**|python, django, MeCab, Doc2Vec|
-|**🏷️ Github**|[🔗link](https://github.com/cmjcum/webtachu){:target="_blank"}|
+||[`🔗 portfolio/webtachu`](/2022-06-02/webtachu)|
+|**Desc**|자연어 처리를 이용해 웹소설의 스토리를 벡터 임베딩하여 \사용자가 좋아한 작품의 줄거리와 유사도가 높은 작품을 추천해주는 서비스|
+|**Tech**|`python`, `django`, `MeCab`, `Doc2Vec`|
+|**Duration&nbsp;&nbsp;&nbsp;&nbsp;**|2022-06-02 ~ 2022-06-13|
+|**Github**|[`🔗link`](https://github.com/cmjcum/webtachu)|
 
 <br/>
 
-|Project 1.|🍮 Jellymodi|
+|_Project 1._|[팀 프로젝트]&nbsp;🍮&nbsp;Jellymodi|
 |:---|:---|
-|**📄 Desc**|사물인식 머신러닝을 통해 사진 상의 표정을 분석하여 감정 이모티콘으로 바꾸어 하루의 기분을 기록하는 일기 작성 서비스|
-|**📅 Duration** &nbsp;&nbsp;&nbsp;|2022-05-18 ~ 2022-05-25|
-|**⚙️ Tech**|python, flask, mongoDB, ajax, OpenCV|
-|**🏷️ Github**|[🔗link](https://github.com/cmjcum/Jellymodi_team){:target="_blank"}|
+||[`🔗 portfolio/jellymodi`](/2022-05-18/jellymodi)|
+|**Desc**|사물인식 머신러닝을 통해 사진 상의 표정을 분석하여 감정 이모티콘으로 바꾸어 하루의 기분을 기록하는 일기 작성 서비스|
+|**Tech**|`python`, `flask`, `mongoDB`, `ajax`, `OpenCV`|
+|**Duration&nbsp;&nbsp;&nbsp;&nbsp;**|2022-05-18 ~ 2022-05-25|
+|**Github**|[`🔗link`](https://github.com/cmjcum/Jellymodi_team)|
 
 <br/>
 
 # Career
-* [스파르타](https://spartacodingclub.kr/){:target="_blank"} 내일배움캠프 (2022-04-18 ~ 2022-08-18)
+* [스파르타](https://spartacodingclub.kr/) 내일배움캠프 (2022-04-18 ~ 2022-08-18)
   * 실무형 AI 웹 개발자 양성 과정 2회차 수료
   * 기간 중 팀 프로젝트 진행
- [![GitHub](https://img.shields.io/badge/-Team Project GitHub-FF9800?style=flat-square&logo=GitHub&logoColor=black)](https://github.com/cmjcum){:target="_blank"}
+ [![GitHub](https://img.shields.io/badge/-Team Project GitHub-FF9800?style=flat-square&logo=GitHub&logoColor=black)](https://github.com/cmjcum)
 
 <br/>
 
 # Interests
-[![Solved.ac](http://mazassumnida.wtf/api/generate_badge?boj=mp98dl4)](https://solved.ac/profile/mp98dl4){:target="_blank"}
+[![Solved.ac](http://mazassumnida.wtf/api/generate_badge?boj=mp98dl4)](https://solved.ac/profile/mp98dl4)

@@ -2,7 +2,7 @@
 layout: post
 title: "Jellymodi"
 info: "머신러닝 사물인식 프로젝트"
-tech: "python, flask, mongoDB, ajax, OpenCV, deeplearning "
+tech: "python, flask, mongoDB, ajax, OpenCV, deeplearning"
 type: 내일배움캠프
 ---
 
@@ -51,11 +51,16 @@ type: 내일배움캠프
 | 이름 | 역할 | 깃허브 |
 |:----------|:----------|:----------:|
 | **이정아&nbsp;&nbsp;&nbsp;&nbsp;** | 일기 조회 페이지 | [`🔗zeonga1102`](https://github.com/zeonga1102)|
-| **🌱노을** | 메인 페이지, 로고 제작 | [`🔗minkkky`](https://github.com/minkkky) |
+| **노을🌱** | 메인 페이지, 로고 제작 | [`🔗minkkky`](https://github.com/minkkky) |
 | **이현경** | 로그인 및 회원가입 페이지&nbsp;&nbsp;&nbsp;&nbsp; | [`🔗LULULALA2`](https://github.com/LULULALA2)|
 | **김동근** | 일기 작성 페이지 | [`🔗yinmsk`](https://github.com/yinmsk) |
 
 * 모델제작 - 팀 전체 참여
+
+<br/>
+
+## 스킬 및 사용툴
+`Python`, `Flask`, `Blueprint`, `MongoDB`, `Ajax`, `OpenCV`, `Machine Learning`
 
 <br/>
 

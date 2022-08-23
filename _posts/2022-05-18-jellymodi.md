@@ -38,8 +38,8 @@ type: 내일배움캠프
 
 # Project
 ---
-* [깃허브](https://github.com/cmjcum/Jellymodi_team)
-* [Starting Assignment (figma)](https://www.figma.com/file/2Cly7HHq84Poz0s6gWyv46/%EC%BD%94%EB%AA%BB%EC%A3%BD---%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EC%82%AC%EB%AC%BC%EC%9D%B8%EC%8B%9D?node-id=0%3A1)
+* [`🔗Github`](https://github.com/cmjcum/Jellymodi_team)
+* [`🔗Starting Assignment (figma)`](https://www.figma.com/file/2Cly7HHq84Poz0s6gWyv46/%EC%BD%94%EB%AA%BB%EC%A3%BD---%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EC%82%AC%EB%AC%BC%EC%9D%B8%EC%8B%9D?node-id=0%3A1)
 
 ## 프로젝트 기간
 2022-05-18 ~ 2022-05-25
@@ -49,11 +49,11 @@ type: 내일배움캠프
 ## 팀 구성 및 역할
 
 | 이름 | 역할 | 깃허브 |
-|:----------|:----------|:----------|
-| **이정아&nbsp;&nbsp;&nbsp;&nbsp;** | 일기 조회 페이지 | <a href="https://github.com/zeonga1102"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=github&logoColor=white"/></a> |
-| **노을** | 메인 페이지 | <a href="https://github.com/minkkky"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=github&logoColor=white"/></a> |
-| **이현경** | 로그인 및 회원가입 페이지&nbsp;&nbsp;&nbsp;&nbsp; | <a href="https://github.com/LULULALA2"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=github&logoColor=white"/></a> |
-| **김동근** | 일기 작성 페이지 | <a href="https://github.com/cmjcum"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&logo=github&logoColor=white"/></a> |
+|:----------|:----------|:----------:|
+| **이정아&nbsp;&nbsp;&nbsp;&nbsp;** | 일기 조회 페이지 | [`🔗zeonga1102`](https://github.com/zeonga1102)|
+| **🌱노을** | 메인 페이지, 로고 제작 | [`🔗minkkky`](https://github.com/minkkky) |
+| **이현경** | 로그인 및 회원가입 페이지&nbsp;&nbsp;&nbsp;&nbsp; | [`🔗LULULALA2`](https://github.com/LULULALA2)|
+| **김동근** | 일기 작성 페이지 | [`🔗yinmsk`](https://github.com/yinmsk) |
 
 * 모델제작 - 팀 전체 참여
 
@@ -80,20 +80,20 @@ type: 내일배움캠프
 ```python
 posts = list(db.posts.find({"email": payload['email']}).sort('date', -1))
 ```
-1. `Problem` 월별로 데이터를 구분하여 출력할 수 없다.
-1. `Action`  for문과 try문을 이용하여 데이터를 월별로 묶어준다.
+1. `Problem` 월별로 데이터를 구분하여 출력할 수 없었다.
+1. `Action`  for문과 try문을 이용하여 데이터를 월별로 묶어주었다.
     ```python
     temp = {}
     for post in posts:
         try:
             temp[post['date'].strftime('%Y %B')].append(post)
-        except:
+        except: # 작성된 글이 없을 때
             temp[post['date'].strftime('%Y %B')] = [post]
 
     return render_template('index.html', temp=temp)
     ```
 1. `Problem` 월별로 내림차순 정렬된 것은 좋았으나, 일별로도 내림차순 정렬되어 원하는 형태가 아니었다.
-1. `Action`   date에서 년월/날짜 값을 뽑아낸 후 sort()를 이용하여 년월 값으로는 내림차순 정렬을 하고, 날짜 값으로는 오름차순 정렬을 하는 다중조건으로 정렬하여 해결했다.
+1. `Action`   date에서 년월/날짜 값을 뽑아낸 후 sort()를 이용하여 년월 값으로는 내림차순 정렬을 하고, 날짜 값으로는 오름차순 정렬을 하는 `다중조건`으로 정렬하여 해결했다.
     ```python
     posts = list(db.posts.find({"email": payload['email']}))
 
@@ -107,7 +107,7 @@ posts = list(db.posts.find({"email": payload['email']}).sort('date', -1))
 ### 메인 페이지의 프론트엔드
 1. `Goal` jinja2 문법을 사용하여 데이터 출력하기
 1. `Problem` 서버에서 받아온 데이터는 딕셔너리와 리스트가 복합된 형태로, key값과 item값을 둘 다 사용하는 방법을 몰랐다.
-1. `Action` for문과 items() 함수를 사용하여 출력했다.
+1. `Action` for문과 `items()` 함수를 사용하여 출력했다.
     {%  raw %}
     ```html
     {% for key, value in temp.items() %}
@@ -130,8 +130,8 @@ posts = list(db.posts.find({"email": payload['email']}).sort('date', -1))
 <br/>
 
 ## 회고
-기획 단계에서 브레인스토밍으로 나온 아이디어들을 잘 활용해서 하나의 서비스로 구상한 것을 생각했던 대로 기획안과 컨셉에 맞춰서 충실하게 디자인과 기능을 구현해서 아주 만족스럽다.  
+>기획 단계에서 브레인스토밍으로 나온 아이디어들을 잘 활용해서 하나의 서비스로 구상한 것을 생각했던 대로 기획안과 컨셉에 맞춰서 충실하게 디자인과 기능을 구현해서 아주 만족스럽다.  
 
-머신러닝 모델 제작 부분은 전처리부터 모델 학습시키는 것까지 팀원 전부가 참여한 점과 이 과정을 직접 경험해본 점도 좋았다.  
+>머신러닝 모델 제작 부분은 전처리부터 모델 학습시키는 것까지 팀원 전부가 참여한 점과 이 과정을 직접 경험해본 점도 좋았다.  
 
-머신러닝 모델을 학습시키는 데에서 그치지 않고 실제로 활용하여 하나의 앱에 자연스럽게 녹인 것도 좋았다. 실제로 서비스해도 될 정도의 퀄리티로 완성되어 호평을 받아 흐뭇하다.
+>머신러닝 모델을 학습시키는 데에서 그치지 않고 실제로 활용하여 하나의 앱에 자연스럽게 녹인 것도 좋았다. 실제로 서비스해도 될 정도의 퀄리티로 완성되어 호평을 받아 흐뭇하다.

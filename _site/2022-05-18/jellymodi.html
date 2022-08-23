@@ -79,8 +79,8 @@
 <h1 id="project">Project</h1>
 <hr />
 <ul>
-  <li><a href="https://github.com/cmjcum/Jellymodi_team">깃허브</a></li>
-  <li><a href="https://www.figma.com/file/2Cly7HHq84Poz0s6gWyv46/%EC%BD%94%EB%AA%BB%EC%A3%BD---%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EC%82%AC%EB%AC%BC%EC%9D%B8%EC%8B%9D?node-id=0%3A1">Starting Assignment (figma)</a></li>
+  <li><a href="https://github.com/cmjcum/Jellymodi_team"><code class="language-plaintext highlighter-rouge">🔗Github</code></a></li>
+  <li><a href="https://www.figma.com/file/2Cly7HHq84Poz0s6gWyv46/%EC%BD%94%EB%AA%BB%EC%A3%BD---%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D-%EC%82%AC%EB%AC%BC%EC%9D%B8%EC%8B%9D?node-id=0%3A1"><code class="language-plaintext highlighter-rouge">🔗Starting Assignment (figma)</code></a></li>
 </ul>
 
 <h2 id="프로젝트-기간">프로젝트 기간</h2>
@@ -95,29 +95,29 @@
     <tr>
       <th style="text-align: left">이름</th>
       <th style="text-align: left">역할</th>
-      <th style="text-align: left">깃허브</th>
+      <th style="text-align: center">깃허브</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align: left"><strong>이정아    </strong></td>
       <td style="text-align: left">일기 조회 페이지</td>
-      <td style="text-align: left"><a href="https://github.com/zeonga1102"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&amp;logo=github&amp;logoColor=white" /></a></td>
+      <td style="text-align: center"><a href="https://github.com/zeonga1102"><code class="language-plaintext highlighter-rouge">🔗zeonga1102</code></a></td>
     </tr>
     <tr>
-      <td style="text-align: left"><strong>노을</strong></td>
-      <td style="text-align: left">메인 페이지</td>
-      <td style="text-align: left"><a href="https://github.com/minkkky"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&amp;logo=github&amp;logoColor=white" /></a></td>
+      <td style="text-align: left"><strong>🌱노을</strong></td>
+      <td style="text-align: left">메인 페이지, 로고 제작</td>
+      <td style="text-align: center"><a href="https://github.com/minkkky"><code class="language-plaintext highlighter-rouge">🔗minkkky</code></a></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>이현경</strong></td>
       <td style="text-align: left">로그인 및 회원가입 페이지    </td>
-      <td style="text-align: left"><a href="https://github.com/LULULALA2"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&amp;logo=github&amp;logoColor=white" /></a></td>
+      <td style="text-align: center"><a href="https://github.com/LULULALA2"><code class="language-plaintext highlighter-rouge">🔗LULULALA2</code></a></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>김동근</strong></td>
       <td style="text-align: left">일기 작성 페이지</td>
-      <td style="text-align: left"><a href="https://github.com/cmjcum"><img src="https://img.shields.io/badge/Github-000000?style=flat-square&amp;logo=github&amp;logoColor=white" /></a></td>
+      <td style="text-align: center"><a href="https://github.com/yinmsk"><code class="language-plaintext highlighter-rouge">🔗yinmsk</code></a></td>
     </tr>
   </tbody>
 </table>
@@ -161,20 +161,20 @@
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">posts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="p">.</span><span class="n">posts</span><span class="p">.</span><span class="n">find</span><span class="p">({</span><span class="s">"email"</span><span class="p">:</span> <span class="n">payload</span><span class="p">[</span><span class="s">'email'</span><span class="p">]}).</span><span class="n">sort</span><span class="p">(</span><span class="s">'date'</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 </code></pre></div>    </div>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">Problem</code> 월별로 데이터를 구분하여 출력할 수 없다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code>  for문과 try문을 이용하여 데이터를 월별로 묶어준다.
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> 월별로 데이터를 구분하여 출력할 수 없었다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code>  for문과 try문을 이용하여 데이터를 월별로 묶어주었다.
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">temp</span> <span class="o">=</span> <span class="p">{}</span>
  <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">posts</span><span class="p">:</span>
      <span class="k">try</span><span class="p">:</span>
          <span class="n">temp</span><span class="p">[</span><span class="n">post</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y %B'</span><span class="p">)].</span><span class="n">append</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
-     <span class="k">except</span><span class="p">:</span>
-         <span class="n">temp</span><span class="p">[</span><span class="n">post</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y %B'</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">post</span><span class="p">]</span>
+     <span class="k">except</span><span class="p">:</span> <span class="c1"># 작성된 글이 없을 때
+</span>         <span class="n">temp</span><span class="p">[</span><span class="n">post</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y %B'</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">post</span><span class="p">]</span>
 
  <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'index.html'</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="n">temp</span><span class="p">)</span>
 </code></pre></div>    </div>
   </li>
   <li><code class="language-plaintext highlighter-rouge">Problem</code> 월별로 내림차순 정렬된 것은 좋았으나, 일별로도 내림차순 정렬되어 원하는 형태가 아니었다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code>   date에서 년월/날짜 값을 뽑아낸 후 sort()를 이용하여 년월 값으로는 내림차순 정렬을 하고, 날짜 값으로는 오름차순 정렬을 하는 다중조건으로 정렬하여 해결했다.
+  <li><code class="language-plaintext highlighter-rouge">Action</code>   date에서 년월/날짜 값을 뽑아낸 후 sort()를 이용하여 년월 값으로는 내림차순 정렬을 하고, 날짜 값으로는 오름차순 정렬을 하는 <code class="language-plaintext highlighter-rouge">다중조건</code>으로 정렬하여 해결했다.
     <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">posts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="p">.</span><span class="n">posts</span><span class="p">.</span><span class="n">find</span><span class="p">({</span><span class="s">"email"</span><span class="p">:</span> <span class="n">payload</span><span class="p">[</span><span class="s">'email'</span><span class="p">]}))</span>
 
  <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">posts</span><span class="p">:</span>
@@ -191,7 +191,7 @@
   <li><code class="language-plaintext highlighter-rouge">Goal</code> jinja2 문법을 사용하여 데이터 출력하기</li>
   <li><code class="language-plaintext highlighter-rouge">Problem</code> 서버에서 받아온 데이터는 딕셔너리와 리스트가 복합된 형태로, key값과 item값을 둘 다 사용하는 방법을 몰랐다.</li>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">Action</code> for문과 items() 함수를 사용하여 출력했다.</p>
+    <p><code class="language-plaintext highlighter-rouge">Action</code> for문과 <code class="language-plaintext highlighter-rouge">items()</code> 함수를 사용하여 출력했다.</p>
 
     <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {% for key, value in temp.items() %}
  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
@@ -214,11 +214,17 @@
 <p><br /></p>
 
 <h2 id="회고">회고</h2>
-<p>기획 단계에서 브레인스토밍으로 나온 아이디어들을 잘 활용해서 하나의 서비스로 구상한 것을 생각했던 대로 기획안과 컨셉에 맞춰서 충실하게 디자인과 기능을 구현해서 아주 만족스럽다.</p>
+<blockquote>
+  <p>기획 단계에서 브레인스토밍으로 나온 아이디어들을 잘 활용해서 하나의 서비스로 구상한 것을 생각했던 대로 기획안과 컨셉에 맞춰서 충실하게 디자인과 기능을 구현해서 아주 만족스럽다.</p>
+</blockquote>
 
-<p>머신러닝 모델 제작 부분은 전처리부터 모델 학습시키는 것까지 팀원 전부가 참여한 점과 이 과정을 직접 경험해본 점도 좋았다.</p>
+<blockquote>
+  <p>머신러닝 모델 제작 부분은 전처리부터 모델 학습시키는 것까지 팀원 전부가 참여한 점과 이 과정을 직접 경험해본 점도 좋았다.</p>
+</blockquote>
 
-<p>머신러닝 모델을 학습시키는 데에서 그치지 않고 실제로 활용하여 하나의 앱에 자연스럽게 녹인 것도 좋았다. 실제로 서비스해도 될 정도의 퀄리티로 완성되어 호평을 받아 흐뭇하다.</p>
+<blockquote>
+  <p>머신러닝 모델을 학습시키는 데에서 그치지 않고 실제로 활용하여 하나의 앱에 자연스럽게 녹인 것도 좋았다. 실제로 서비스해도 될 정도의 퀄리티로 완성되어 호평을 받아 흐뭇하다.</p>
+</blockquote>
 
 
 </div>
@@ -238,7 +244,7 @@
 
     <footer>
       <span>
-        &copy; <time datetime="2022-08-23 17:52:30 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
+        &copy; <time datetime="2022-08-23 20:02:43 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
       </span>
     </footer>
   </body>

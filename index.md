@@ -7,6 +7,8 @@ layout: about
 Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝트를 진행했습니다.  
 사진은 딥페이크로 움직이게 만든 젤리티콘!
 
+<br/>
+
 ## Contact
 
 |---|---|

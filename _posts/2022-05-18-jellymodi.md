@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jellymodi"
+title: "🍮Jellymodi"
 info: "머신러닝 사물인식 프로젝트"
 tech: "python, flask, mongoDB, ajax, OpenCV, deeplearning"
 type: 내일배움캠프

@@ -38,7 +38,7 @@
 
     <main>
       <div class="post">
-  <h2 class="post-title">[웹소설] 일타강사 AI의 기막힌 추천</h2>
+  <h2 class="post-title">🤖[웹소설] 일타강사 AI의 기막힌 추천</h2>
   <div class="post-line"></div>
 
   <p><img src="https://camo.githubusercontent.com/94b1c3641c1dbabac16cfff75bd7604185177535669be244ef38db5b904acdeb/68747470733a2f2f696d67312e6461756d63646e2e6e65742f7468756d622f523132383078302f3f73636f64653d6d746973746f72793226666e616d653d6874747073253341253246253246626c6f672e6b616b616f63646e2e6e6574253246646e25324663525a7957772532466274724a326e6256304c79253246563074684c36744e6a4a4b6e6b5072487369596c4a4b253246696d672e706e67" alt="logo" /></p>
@@ -53,8 +53,8 @@
 
 <h2 id="주요-기능">주요 기능</h2>
 <ol>
-  <li>JWT를 이용한 로그인</li>
-  <li>네이버 시리즈에서 판매중인 웹소설 작품의 작품정보를 Selenium을 이용하여 크롤링</li>
+  <li>Django 내장 모델을 사용한 회원가입/로그인/로그아웃 기능</li>
+  <li>네이버 시리즈에서 판매중인 웹소설 작품의 작품정보를 BeautifulSoup과 Selenium을 이용하여 크롤링</li>
   <li>자연어 처리를 이용해 웹소설의 스토리를 벡터 임베딩</li>
   <li>사용자가 좋아한 작품의 줄거리와 유사도가 높은 작품을 추천
     <ul>
@@ -92,23 +92,23 @@
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><strong>이정아    </strong></td>
-      <td style="text-align: left">-</td>
-      <td style="text-align: center"><a href="https://github.com/zeonga1102"><code class="language-plaintext highlighter-rouge">🔗zeonga1102</code></a></td>
-    </tr>
-    <tr>
       <td style="text-align: left"><strong>노을🌱</strong></td>
-      <td style="text-align: left">로그인/회원가입, 마이 페이지, 로고 제작</td>
+      <td style="text-align: left">로그인/회원가입 페이지, 마이 페이지, 로고 제작    </td>
       <td style="text-align: center"><a href="https://github.com/minkkky"><code class="language-plaintext highlighter-rouge">🔗minkkky</code></a></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>이현경</strong></td>
-      <td style="text-align: left">-    </td>
+      <td style="text-align: left">작품 상세 페이지</td>
       <td style="text-align: center"><a href="https://github.com/LULULALA2"><code class="language-plaintext highlighter-rouge">🔗LULULALA2</code></a></td>
     </tr>
     <tr>
+      <td style="text-align: left"><strong>이정아    </strong></td>
+      <td style="text-align: left">작품 상세 페이지</td>
+      <td style="text-align: center"><a href="https://github.com/zeonga1102"><code class="language-plaintext highlighter-rouge">🔗zeonga1102</code></a></td>
+    </tr>
+    <tr>
       <td style="text-align: left"><strong>김동근</strong></td>
-      <td style="text-align: left">-</td>
+      <td style="text-align: left">메인 페이지, 장르별 페이지</td>
       <td style="text-align: center"><a href="https://github.com/yinmsk"><code class="language-plaintext highlighter-rouge">🔗yinmsk</code></a></td>
     </tr>
   </tbody>
@@ -127,63 +127,166 @@
 
 <h2 id="나의-역할">나의 역할</h2>
 
+<h3 id="모델-제작">모델 제작</h3>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> Colab에서 네이버 시리즈 장르 소설 중 무협, 로맨스 장르의 데이터를 크롤링하기 <a href="https://colab.research.google.com/drive/1v8aza877rlbwOP1sDZ3nFk8TneiLkmF8?usp=sharing"><code class="language-plaintext highlighter-rouge">🔗colab</code></a></li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> BeautifulSoup을 이용하여 크롤링을 시도했으나, 줄거리가 긴 작품의 경우 더보기 버튼을 눌러야만 줄거리 전체를 크롤링할 수 있어 제대로 줄거리를 모을 수 없었다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> BeautifulSoup으로는 작품별 url만 수집하고, 작품 상세 페이지에서는 Selenium을 이용하여 동적인 웹페이지에 대응하여 크롤링하였다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> 크롤링한 데이터에 자연어 처리 시 불필요한 내용이 포함되거나, 저장된 내용이 형식에 맞지 않거나, 오류가 발생했다.
+    <ul>
+      <li>작품 제목에 작품 분류나 시리즈 자체 프로모션과 관련된 키워드가 노출됨 <code class="language-plaintext highlighter-rouge">매일10시무료</code>, <code class="language-plaintext highlighter-rouge">[독점]</code>, <code class="language-plaintext highlighter-rouge">[무료연재]</code>, <code class="language-plaintext highlighter-rouge">[단행본]</code></li>
+      <li>커버 이미지의 url 위치가 다른 경우 오류가 발생함</li>
+      <li>그림 작가와 글 작가가 따로 표기된 작품의 경우 출판사 대신 그림 작가의 이름의 저장됨</li>
+      <li>줄거리가 짧아 더보기 버튼이 따로 없는 경우에는 오류가 발생함</li>
+      <li>성인만 볼 수 있도록 열람제한이 걸린 경우오류가 발생함</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> try문과 if문을 사용하여 예외처리를 했다.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urlList</span><span class="p">:</span>
+ <span class="n">driver</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+ <span class="k">try</span><span class="p">:</span>
+     <span class="n">cover</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s">'#container &gt; div.aside.NE\=a\:nvi &gt; a &gt; img'</span><span class="p">).</span><span class="n">get_attribute</span><span class="p">(</span><span class="s">'src'</span><span class="p">)</span>
+ <span class="k">except</span><span class="p">:</span>
+     <span class="k">try</span><span class="p">:</span>
+     <span class="n">cover</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s">'#container &gt; div.aside.NE\=a\:nvi &gt; span &gt; img'</span><span class="p">).</span><span class="n">get_attribute</span><span class="p">(</span><span class="s">'src'</span><span class="p">)</span>
+     <span class="k">except</span><span class="p">:</span>
+     <span class="k">continue</span>
+    
+ <span class="k">try</span><span class="p">:</span>
+     <span class="n">title</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s">'#content &gt; div.end_head &gt; h2'</span><span class="p">).</span><span class="n">text</span>
+     <span class="k">if</span> <span class="s">'['</span> <span class="ow">in</span> <span class="n">title</span><span class="p">:</span>
+     <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">'['</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+     <span class="k">if</span> <span class="s">'시무료'</span> <span class="ow">in</span> <span class="n">title</span><span class="p">:</span>
+     <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">'시무료'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+     <span class="n">genre</span> <span class="o">=</span> <span class="s">'무협'</span>
+     <span class="n">author</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s">'#content &gt; ul.end_info.NE\=a\:nvi &gt; li &gt; ul &gt; li:nth-child(3) &gt; a'</span><span class="p">).</span><span class="n">text</span>
+        
+     <span class="k">if</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s">'#content &gt; ul.end_info.NE\=a\:nvi &gt; li &gt; ul &gt; li:nth-child(4) &gt; span'</span><span class="p">).</span><span class="n">text</span> <span class="o">==</span> <span class="s">'그림'</span><span class="p">:</span>
+     <span class="n">publisher</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s">'#content &gt; ul.end_info.NE\=a\:nvi &gt; li &gt; ul &gt; li:nth-child(5) &gt; a'</span><span class="p">).</span><span class="n">text</span>
+     <span class="k">else</span><span class="p">:</span>
+     <span class="n">publisher</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s">'#content &gt; ul.end_info.NE\=a\:nvi &gt; li &gt; ul &gt; li:nth-child(4) &gt; a'</span><span class="p">).</span><span class="n">text</span>
+
+     <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//*[@id="content"]/div[2]/div[1]/span/a'</span><span class="p">).</span><span class="n">click</span><span class="p">()</span>
+     <span class="n">story</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s">'#content &gt; div.end_dsc &gt; div:nth-child(2)'</span><span class="p">).</span><span class="n">text</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+ <span class="k">except</span><span class="p">:</span>
+     <span class="n">story</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_css_selector</span><span class="p">(</span><span class="s">'#content &gt; div.end_dsc &gt; div'</span><span class="p">).</span><span class="n">text</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+ <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">.</span><span class="n">from_dict</span><span class="p">([{</span><span class="s">'cover'</span><span class="p">:</span> <span class="n">cover</span><span class="p">,</span> <span class="s">'title'</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="s">'genre'</span><span class="p">:</span> <span class="n">genre</span><span class="p">,</span> <span class="s">'author'</span><span class="p">:</span> <span class="n">author</span><span class="p">,</span> <span class="s">'publisher'</span><span class="p">:</span> <span class="n">publisher</span><span class="p">,</span> <span class="s">'story'</span><span class="p">:</span> <span class="n">story</span><span class="p">}])</span>
+ <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+     <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">([</span><span class="n">data</span><span class="p">,</span> <span class="n">df</span><span class="p">])</span>
+ <span class="k">else</span><span class="p">:</span>
+     <span class="n">data</span> <span class="o">=</span> <span class="n">df</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
 <h3 id="회원가입로그인-페이지-백엔드">회원가입/로그인 페이지 백엔드</h3>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> Django 내장 모델로 회원가입/로그인/로그아웃 기능 구현하기
+    <ol>
+      <li>회원가입 기능</li>
+      <li>로그인 기능
+        <ol>
+          <li><code class="language-plaintext highlighter-rouge">Problem</code> 회원가입은 되어서 db에 유저 정보가 잘 추가 되었는데, 그 계정으로 로그인을 시도하면 me 값이 None으로 찍히며 로그인에 실패했다.
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">me</span> <span class="o">=</span> <span class="n">auth</span><span class="p">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>
+ <span class="k">if</span> <span class="n">me</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+     <span class="n">auth</span><span class="p">.</span><span class="n">login</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">me</span><span class="p">)</span>
+     <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">"로그인 성공"</span><span class="p">)</span>
+</code></pre></div>            </div>
+          </li>
+          <li><code class="language-plaintext highlighter-rouge">Action</code> django의 auth 기능은 <code class="language-plaintext highlighter-rouge">username과 password로 인증</code>하는 것이 <code class="language-plaintext highlighter-rouge">기본 설정값</code>이라서 username 대신 email을 사용하여 로그인을 시도하려니 실패하는 것이었다. email 대신 <code class="language-plaintext highlighter-rouge">username(ID)과 password</code>로 로그인을 수행하도록 변경하여 해결했다.
+            <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># users/views.py
+</span> <span class="k">def</span> <span class="nf">sign_in_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+     <span class="k">if</span> <span class="n">request</span><span class="p">.</span><span class="n">method</span> <span class="o">==</span> <span class="s">'POST'</span><span class="p">:</span>
+         <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'id'</span><span class="p">,</span> <span class="s">''</span><span class="p">)</span>
+         <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">POST</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'password'</span><span class="p">,</span> <span class="s">''</span><span class="p">)</span>
+         <span class="n">me</span> <span class="o">=</span> <span class="n">auth</span><span class="p">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>
+         <span class="k">if</span> <span class="n">me</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+             <span class="n">auth</span><span class="p">.</span><span class="n">login</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">me</span><span class="p">)</span>
+             <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="s">'/'</span><span class="p">)</span>
+         <span class="k">else</span><span class="p">:</span>
+             <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="s">'user/signin.html'</span><span class="p">,{</span><span class="s">'error'</span><span class="p">:</span><span class="s">'ID 혹은 패스워드를 확인 해 주세요'</span><span class="p">})</span>
+</code></pre></div>            </div>
+          </li>
+        </ol>
+      </li>
+      <li>로그아웃 기능</li>
+    </ol>
+  </li>
+</ol>
 
 <h3 id="회원가입로그인-페이지-프론트엔드">회원가입/로그인 페이지 프론트엔드</h3>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">부트스트랩</code>을 최대한 활용하여 <code class="language-plaintext highlighter-rouge">반응형</code>으로 구현했다.</li>
+  <li>
+    <p>에러메시지를 alert 대신 템플릿 문법으로 출력했다.</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {% if error %}
+     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"alert alert-danger"</span> <span class="na">role=</span><span class="s">"alert"</span><span class="nt">&gt;</span>
+         {{ error }}
+     <span class="nt">&lt;/div&gt;</span>
+ {% endif %}
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 <h3 id="마이-페이지의-백엔드">마이 페이지의 백엔드</h3>
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">Goal</code> 해당 이용자가 작성한 일기를 월별로 불러오기</li>
-  <li>가장 최근에 글을 쓴 달부터 글을 표시하기 위해서 데이터를 DB에서 불러올 때 내림차순으로 sort하여 가져왔다.
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">posts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="p">.</span><span class="n">posts</span><span class="p">.</span><span class="n">find</span><span class="p">({</span><span class="s">"email"</span><span class="p">:</span> <span class="n">payload</span><span class="p">[</span><span class="s">'email'</span><span class="p">]}).</span><span class="n">sort</span><span class="p">(</span><span class="s">'date'</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-</code></pre></div>    </div>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> ManyToManyField에 등록된 순서로 선호작품 정렬하기</li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> 불러온 선호작 데이터를 id로 정렬했더니 장르별로만 정렬되었다.
+    <ul>
+      <li>정렬에 사용한 id는 BookModel의 id값, 즉 book_id이므로 선호작품 등록 순서와는 관계가 없다.</li>
+    </ul>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">Problem</code> 월별로 데이터를 구분하여 출력할 수 없었다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code>  for문과 try문을 이용하여 데이터를 월별로 묶어주었다.
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">temp</span> <span class="o">=</span> <span class="p">{}</span>
- <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">posts</span><span class="p">:</span>
-     <span class="k">try</span><span class="p">:</span>
-         <span class="n">temp</span><span class="p">[</span><span class="n">post</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y %B'</span><span class="p">)].</span><span class="n">append</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
-     <span class="k">except</span><span class="p">:</span> <span class="c1"># 작성된 글이 없을 때
-</span>         <span class="n">temp</span><span class="p">[</span><span class="n">post</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y %B'</span><span class="p">)]</span> <span class="o">=</span> <span class="p">[</span><span class="n">post</span><span class="p">]</span>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> 이상록 튜터님의 조언으로 <code class="language-plaintext highlighter-rouge">Raw query</code>로 users_favorites에 접근하여 id값을 받아와 정렬했다.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># 로그인 중인 유저의 정보
+</span> <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">user</span>
+ <span class="n">user_id</span> <span class="o">=</span> <span class="n">user</span><span class="p">.</span><span class="nb">id</span>
 
- <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">'index.html'</span><span class="p">,</span> <span class="n">temp</span><span class="o">=</span><span class="n">temp</span><span class="p">)</span>
-</code></pre></div>    </div>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">Problem</code> 월별로 내림차순 정렬된 것은 좋았으나, 일별로도 내림차순 정렬되어 원하는 형태가 아니었다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code>   date에서 년월/날짜 값을 뽑아낸 후 sort()를 이용하여 년월 값으로는 내림차순 정렬을 하고, 날짜 값으로는 오름차순 정렬을 하는 <code class="language-plaintext highlighter-rouge">다중조건</code>으로 정렬하여 해결했다.
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">posts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">db</span><span class="p">.</span><span class="n">posts</span><span class="p">.</span><span class="n">find</span><span class="p">({</span><span class="s">"email"</span><span class="p">:</span> <span class="n">payload</span><span class="p">[</span><span class="s">'email'</span><span class="p">]}))</span>
-
- <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">posts</span><span class="p">:</span>
-     <span class="n">post</span><span class="p">[</span><span class="s">'Y-M'</span><span class="p">]</span> <span class="o">=</span> <span class="n">post</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%Y%m'</span><span class="p">)</span> <span class="c1"># 'Y-M': yyyymm
-</span>     <span class="n">post</span><span class="p">[</span><span class="s">'day'</span><span class="p">]</span> <span class="o">=</span> <span class="n">post</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">strftime</span><span class="p">(</span><span class="s">'%d'</span><span class="p">)</span> <span class="c1"># 'day': dd
+ <span class="c1"># ManyToManyField의 값 가져오기
+</span> <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="p">.</span><span class="n">cursor</span><span class="p">()</span>
+ <span class="n">query</span> <span class="o">=</span> <span class="s">"SELECT * FROM users_favorite WHERE usermodel_id=%s"</span> <span class="o">%</span> <span class="n">user_id</span>
+ <span class="n">cursor</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+ <span class="n">stocks</span> <span class="o">=</span> <span class="n">cursor</span><span class="p">.</span><span class="n">fetchall</span><span class="p">()</span>
+ <span class="c1"># stocks에 (id, user_id, book_id) 형태의 튜플들이 리스트로 담겨 나옴
 </span>
- <span class="n">posts</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">'Y-M'</span><span class="p">]),</span> <span class="n">x</span><span class="p">[</span><span class="s">'day'</span><span class="p">]))</span>
+ <span class="c1"># stocks를 id를 기준으로 가장 최근에 등록된 글부터 정렬
+</span> <span class="n">stocks</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+ <span class="c1"># 반복문을 돌려 최신 등록 5개 작품 정보를 리스트에 저장
+</span> <span class="c1"># book_id로 해당 BookModel 찾기
+</span> <span class="n">favorite</span> <span class="o">=</span> <span class="p">[]</span>
+ <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+     <span class="n">favorite</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">favorite</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">stocks</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+
+ <span class="c1"># {'favorite':favorite} 을 원하는 html 렌더할 때 같이 보내기
+</span></code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> 선호작으로 등록된 작품이 5개 미만일 때 오류가 발생했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> if문을 이용하여 데이터의 length를 기준으로 다르게 대응하도록 했다.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="n">stocks_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">stocks</span><span class="p">)</span>
+ <span class="k">if</span> <span class="n">stocks_length</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+     <span class="n">stocks_length</span> <span class="o">=</span> <span class="mi">5</span>
+
+ <span class="n">stocks</span><span class="p">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+ <span class="n">favorite</span> <span class="o">=</span> <span class="p">[]</span>
+ <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">stocks_length</span><span class="p">):</span>
+     <span class="n">favorite</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">favorite</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">stocks</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
 </code></pre></div>    </div>
   </li>
 </ol>
 
 <h3 id="마이-페이지의-프론트엔드">마이 페이지의 프론트엔드</h3>
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">Goal</code> jinja2 문법을 사용하여 데이터 출력하기</li>
-  <li><code class="language-plaintext highlighter-rouge">Problem</code> 서버에서 받아온 데이터는 딕셔너리와 리스트가 복합된 형태로, key값과 item값을 둘 다 사용하는 방법을 몰랐다.</li>
-  <li>
-    <p><code class="language-plaintext highlighter-rouge">Action</code> for문과 <code class="language-plaintext highlighter-rouge">items()</code> 함수를 사용하여 출력했다.</p>
-
-    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {% for key, value in temp.items() %}
- <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"list"</span><span class="nt">&gt;</span>
-     <span class="nt">&lt;h5&gt;&lt;span</span> <span class="na">class=</span><span class="s">"deco"</span><span class="nt">&gt;</span>{{ key }}<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"small"</span><span class="nt">&gt;</span>  (젤리 {{ value | length }}개)<span class="nt">&lt;/span&gt;&lt;/span&gt;&lt;/h5&gt;</span>
-     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"jelly_box"</span><span class="nt">&gt;</span>
-         {% for val in value %}
-             <span class="nt">&lt;span</span> <span class="na">data_tooltip=</span><span class="s">"{{ val.date.strftime('%d %a') }}"</span><span class="nt">&gt;</span>
-                 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">{{url_for('detail.show_detail',</span> <span class="na">post_id=</span><span class="s">val._id)}}</span><span class="nt">&gt;</span>
-                     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"jelly"</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">{{val.emoji}}</span><span class="nt">&gt;&lt;/div&gt;</span>
-                 <span class="nt">&lt;/a&gt;</span>
-             <span class="nt">&lt;/span&gt;</span>
-         {% endfor %}
-     <span class="nt">&lt;/div&gt;</span>
- <span class="nt">&lt;/div&gt;</span>
- {% endfor %}
+  <li>대부분의 페이지에서 공통으로 사용하는 상단바 부분의 관리를 용이하게 하고자 base.html로 상단바 부분을 <code class="language-plaintext highlighter-rouge">분리</code>하여 각 페이지에 <code class="language-plaintext highlighter-rouge">extends</code> 했다.</li>
+  <li>제목이 긴 작품의 경우 제목이 잘릴 기준이 되는 길이를 정하여 넘칠 경우 <code class="language-plaintext highlighter-rouge">…</code>으로 표시했다.
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nc">.book-title</span> <span class="p">{</span>
+     <span class="nl">width</span><span class="p">:</span> <span class="m">172px</span><span class="p">;</span>
+     <span class="nl">text-overflow</span><span class="p">:</span> <span class="n">ellipsis</span><span class="p">;</span>
+     <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+     <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+ <span class="p">}</span>
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -192,15 +295,11 @@
 
 <h2 id="회고">회고</h2>
 <blockquote>
-  <p>기획 단계에서 브레인스토밍으로 나온 아이디어들을 잘 활용해서 하나의 서비스로 구상한 것을 생각했던 대로 기획안과 컨셉에 맞춰서 충실하게 디자인과 기능을 구현해서 아주 만족스럽다.</p>
+  <p>백엔드 개발자로서 db를 잘 다루는 일이 중요하다는 것을 몸으로 느꼈다. 내가 원하는 데이터를 db에서 어떻게 가져오는 것이 좋은지에 대해서 끊임없이 고민을 해야겠다.</p>
 </blockquote>
 
 <blockquote>
-  <p>머신러닝 모델 제작 부분은 전처리부터 모델 학습시키는 것까지 팀원 전부가 참여한 점과 이 과정을 직접 경험해본 점도 좋았다.</p>
-</blockquote>
-
-<blockquote>
-  <p>머신러닝 모델을 학습시키는 데에서 그치지 않고 실제로 활용하여 하나의 앱에 자연스럽게 녹인 것도 좋았다. 실제로 서비스해도 될 정도의 퀄리티로 완성되어 호평을 받아 흐뭇하다.</p>
+  <p>오류 상황이 발생할 때 어떻게 try문을 사용하여 예외 처리를 하는 지에 대해 알게 되었다. 예외를 처리할 때는 try-except만 쓰는 것보다 except에 예외 이름을 지정하여 어떤 예외를 처리했는지 구체적으로 사용하는 것이 좋으며, try문의 사용을 최소화하는 것이 좋다는 조언을 항상 염두에 두고 코딩을 해야겠다.</p>
 </blockquote>
 
 
@@ -221,7 +320,7 @@
 
     <footer>
       <span>
-        &copy; <time datetime="2022-08-23 21:23:00 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
+        &copy; <time datetime="2022-08-25 04:13:35 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
       </span>
     </footer>
   </body>

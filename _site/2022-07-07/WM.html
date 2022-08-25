@@ -47,7 +47,10 @@
 
 <h1 id="make-migrations-wm">Make Migrations :WM</h1>
 <hr />
-<p>딥페이크를 이용한 움직이는 사진이 들어간 시민증을 제작해주며, 마이룸 꾸미기 기능을 제공하는 커뮤니티 사이트</p>
+<p>지구를 떠나 태양계의 다른 행성으로 이주한다는 컨셉의 커뮤니티.
+딥페이크를 통한 움직이는 사진을 넣은 시민증을 발급해주고,<br />
+이주한 행성에 아파트처럼 층과 호수를 골라 나만의 공간을 가지고 꾸밀 수 있도록 했으며,<br />
+동네 커뮤니티로서의 역할을 할 수 있도록 행성별 게시판을 제공한다.</p>
 
 <p><a href="https://tv.kakao.com/v/430933218"><code class="language-plaintext highlighter-rouge">🔗시연영상 (피드백 반영 전)</code></a><br />
 <a href="https://tv.kakao.com/v/431224675"><code class="language-plaintext highlighter-rouge">🔗시연영상 (피드백 반영 후)</code></a></p>
@@ -57,7 +60,9 @@
   <li>JWT를 이용한 로그인</li>
   <li>딥페이크를 통한 움직이는 사진 생성</li>
   <li>AWS S3에 이미지 저장</li>
-  <li>게시판 페이지네이션</li>
+  <li>게시판 CRUD, 검색, 페이지네이션</li>
+  <li>방명록 CRUD</li>
+  <li>유저 간 좋아요, 팔로우</li>
   <li>바닐라 JS로 구현한 방 꾸미기 기능
     <ul>
       <li>가구 상점에서 coin으로 가구 구매 가능</li>
@@ -93,17 +98,17 @@
   <tbody>
     <tr>
       <td style="text-align: left"><strong>이정아    </strong></td>
-      <td style="text-align: left">시민증 발급 페이지</td>
+      <td style="text-align: left">시민증 발급 페이지, 상점 페이지(back), 방 꾸미기 기능, 딥러닝    </td>
       <td style="text-align: center"><a href="https://github.com/zeonga1102"><code class="language-plaintext highlighter-rouge">🔗zeonga1102</code></a></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>노을🌱</strong></td>
-      <td style="text-align: left">게시판 페이지</td>
+      <td style="text-align: left">게시판 페이지, 상점 페이지(front), 로고 제작</td>
       <td style="text-align: center"><a href="https://github.com/minkkky"><code class="language-plaintext highlighter-rouge">🔗minkkky</code></a></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>이현경</strong></td>
-      <td style="text-align: left">로그인 및 회원가입 페이지, AWS 배포    </td>
+      <td style="text-align: left">로그인 및 회원가입 페이지, AWS 배포</td>
       <td style="text-align: center"><a href="https://github.com/LULULALA2"><code class="language-plaintext highlighter-rouge">🔗LULULALA2</code></a></td>
     </tr>
     <tr>
@@ -117,7 +122,7 @@
 <p><br /></p>
 
 <h2 id="스킬-및-사용툴">스킬 및 사용툴</h2>
-<p><code class="language-plaintext highlighter-rouge">Python</code>, <code class="language-plaintext highlighter-rouge">Django</code>, <code class="language-plaintext highlighter-rouge">DjangoRestFramwork</code></p>
+<p><img src="https://user-images.githubusercontent.com/71905164/182599471-7262271c-a5b7-4379-8460-0a9b933a51dc.png" alt="Architecture" /></p>
 
 <p><br /></p>
 
@@ -132,27 +137,150 @@
 
 <h3 id="게시판-페이지의-백엔드">게시판 페이지의 백엔드</h3>
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">Goal</code> 이미지 파일은 S3에 올리고 db에는 url만 저장하기</li>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> <strong>XSS 공격 차단하기</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> 단순 텍스트의 나열로서 저장되어 유저가 입력한 내용을 훼손하지 않으면서 스크립트의 동작도 막을 수 있도록,<code class="language-plaintext highlighter-rouge">serializer의 custom validation</code>을 통해 입력된 데이터에 <code class="language-plaintext highlighter-rouge">&lt;</code> <code class="language-plaintext highlighter-rouge">&gt;</code>가 있을 경우 동일한 의미의 HTML 문자 <code class="language-plaintext highlighter-rouge">&amp;lt;</code> <code class="language-plaintext highlighter-rouge">&amp;gt;</code>로 replace하여 저장하는 방식으로 대응했다.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+         <span class="n">content_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'content'</span><span class="p">)</span>
+         <span class="k">if</span> <span class="s">'&lt;'</span> <span class="ow">in</span> <span class="n">data</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'content'</span><span class="p">):</span>
+             <span class="n">content_data</span> <span class="o">=</span> <span class="n">content_data</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'&lt;'</span><span class="p">,</span> <span class="s">'&amp;lt;'</span><span class="p">)</span>
+             <span class="k">if</span> <span class="s">'&gt;'</span> <span class="ow">in</span> <span class="n">data</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'content'</span><span class="p">):</span>
+                 <span class="n">data</span><span class="p">[</span><span class="s">'content'</span><span class="p">]</span> <span class="o">=</span> <span class="n">content_data</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'&gt;'</span><span class="p">,</span> <span class="s">'&amp;gt;'</span><span class="p">)</span>             
+         <span class="k">return</span> <span class="n">data</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> <strong>퍼미션 확인 과정을 간략화하여 코드 길이 줄이기</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> custom permission으로는 url로 받은 값을 사용할 수 없었다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> 게시판을 이용할 수 있는 유저인지 확인하는 함수를 따로 만들어 확인하는 방식으로 코드의 간략화했다.
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">is_okay</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">planet_id</span><span class="p">):</span>
+     <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="n">user</span>
+     <span class="k">if</span> <span class="n">user</span><span class="p">.</span><span class="n">is_authenticated</span><span class="p">:</span>
+     <span class="c1"># 로그인 여부 확인
+</span>         <span class="k">if</span> <span class="n">user</span><span class="p">.</span><span class="n">is_admin</span><span class="p">:</span> 
+         <span class="c1"># 관리자는 모든 게시판을 이용할 수 있음
+</span>             <span class="k">return</span> <span class="bp">True</span>
+         <span class="k">if</span> <span class="n">planet_id</span> <span class="o">==</span> <span class="n">PlanetModel</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">"Solar"</span><span class="p">).</span><span class="nb">id</span><span class="p">:</span> 
+         <span class="c1"># 모든 유저가 이용할 수 있는 게시판임
+</span>             <span class="k">return</span> <span class="bp">True</span>
+         <span class="k">if</span> <span class="n">planet_id</span> <span class="o">==</span> <span class="n">UserInfoModel</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">user__id</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="nb">id</span><span class="p">).</span><span class="n">planet</span><span class="p">.</span><span class="nb">id</span><span class="p">:</span>
+         <span class="c1"># 로그인한 유저의 거주 행성의 게시판에 접속했음
+</span>             <span class="k">return</span> <span class="bp">True</span>
+     <span class="k">return</span> <span class="bp">False</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> <strong>이미지 파일은 S3에 올리고 db에는 url만 저장하기</strong></li>
   <li><code class="language-plaintext highlighter-rouge">Problem</code> 띄어쓰기가 들어있는 경우도 있고, 파일명이 중복되는 경우 등 파일명을 그대로 사용하여 업로드했을 때 url을 사용하기 어려운 문제가 있었다.</li>
   <li><code class="language-plaintext highlighter-rouge">Action</code> 업로드할 때 파일명을 따로 만들어주었다.<br />
 현재 시각을 초 단위까지 받아 파일명으로 쓰고, 작성자의 id도 넣어 혹시라도 여러 명이 동시에 글을 작성했을 때에도 파일명이 중복되는 문제가 없도록 했다.</li>
   <li><code class="language-plaintext highlighter-rouge">Problem</code> 코드를 작성하고 form data로 글 제목, 글 내용, 파일을 전송해보니 db에 잘 저장되었으나, 이미지를 첨부하지 않았을 때는 오류가 발생했다. 게시글에 이미지 파일을 올리는 것이 필수가 아니기 때문에 이에 대한 처리가 필요했다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code>  <br />
+  <li><code class="language-plaintext highlighter-rouge">Action</code> if문을 이용해 이미지 파일이 있을 때만 이미지를 S3에 업로드하는 과정을 거치도록 했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> 이미지 파일이 없을 때 <code class="language-plaintext highlighter-rouge">This QueryDict instance is immutable</code> 에러가 발생했다.
+    <blockquote>
+      <p>form data로 받아온 데이터에 이미지 파일이 있으면 <code class="language-plaintext highlighter-rouge">matable</code>하고, 없으면 <code class="language-plaintext highlighter-rouge">immutable</code>하게 되는 것은 DRF에서 자체적으로 설정하기 때문이다.<br />
+ <a href="https://github.com/encode/django-rest-framework/blob/f744da74d2878b480220ebaf9d8117ff9b79a947/rest_framework/request.py#L25"><code class="language-plaintext highlighter-rouge">🔗참고 /rest_framework/request.py#L25</code></a></p>
+    </blockquote>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> request.data를 바로 사용하지 않고 <code class="language-plaintext highlighter-rouge">copy()</code>로 복사한 후 작업하여 해결했다.<br />
 <a href="https://github.com/cmjcum/WM_back/blob/master/board/views_article.py#L84"><code class="language-plaintext highlighter-rouge">🔖Code #board/views_article.py</code></a></li>
+</ol>
+
+<p><br /></p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> <strong>대댓글 기능 구현하기</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">class</span> <span class="nc">Comment</span><span class="p">(</span><span class="n">models</span><span class="p">.</span><span class="n">Model</span><span class="p">):</span>
+     <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s">'user.User'</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="p">.</span><span class="n">CASCADE</span><span class="p">)</span>
+     <span class="n">article</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Article</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="p">.</span><span class="n">CASCADE</span><span class="p">)</span>
+     <span class="n">content</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+     <span class="n">create_date</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">auto_now_add</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+     <span class="n">parent</span> <span class="o">=</span> <span class="n">models</span><span class="p">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s">'self'</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="p">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div>    </div>
+    <p><code class="language-plaintext highlighter-rouge">parent</code> 필드를 통해 부모댓글에 대한 정보를 참조할 수 있도록 했다.
+ 게시글을 불러올 때 게시글에 달린 댓글 같이 가져오도록, 게시글을 참조하는 댓글들을 역참조하여 직렬화했다.</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> 역참조된 댓글의 id를 기준으로 정렬되었을 뿐, 대댓글로서의 순서는 구현되지 않았다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code>
+    <ol>
+      <li>게시글의 댓글 중 기준이 되는 최상위 댓글(parent=None)만 가져와 직렬화했다.<br />
+ <a href="https://github.com/cmjcum/WM_back/blob/master/board/serializers.py#L141"><code class="language-plaintext highlighter-rouge">🔖ArticleSerializer Code #board/serializers.py</code></a>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">class</span> <span class="nc">ArticleSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="p">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+ <span class="n">comments</span> <span class="o">=</span> <span class="n">serializers</span><span class="p">.</span><span class="n">SerializerMethodField</span><span class="p">()</span>
+ <span class="k">def</span> <span class="nf">get_comments</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+     <span class="n">comments</span> <span class="o">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">comment_set</span><span class="p">.</span><span class="nb">filter</span><span class="p">(</span><span class="n">parent</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+     <span class="n">serializer</span> <span class="o">=</span> <span class="n">CommentSerializer</span><span class="p">(</span><span class="n">comments</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+     <span class="k">return</span> <span class="n">serializer</span><span class="p">.</span><span class="n">data</span>
+</code></pre></div>        </div>
+      </li>
+      <li>최상위 댓글을 parent로 갖는 대댓글을 역참조하여 직렬화했다.<br />
+ <a href="https://github.com/cmjcum/WM_back/blob/master/board/serializers.py#L92"><code class="language-plaintext highlighter-rouge">🔖CommentSerializer Code #board/serializers.py</code></a>
+        <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">class</span> <span class="nc">CommentSerializer</span><span class="p">(</span><span class="n">serializers</span><span class="p">.</span><span class="n">ModelSerializer</span><span class="p">):</span>
+ <span class="n">reply</span> <span class="o">=</span> <span class="n">serializers</span><span class="p">.</span><span class="n">SerializerMethodField</span><span class="p">()</span>
+ <span class="k">def</span> <span class="nf">get_reply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+     <span class="n">serializer</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">__class__</span><span class="p">(</span><span class="n">instance</span><span class="p">.</span><span class="n">comment_set</span><span class="p">,</span> <span class="n">many</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+     <span class="c1"># instance.comment_set을 통해 대댓글을 불러온 후 self.__class__를 통해 직렬화한다.
+</span>     <span class="c1"># 직렬화 중 대댓글이 존재할 경우 get_reply 호출과 직렬화가 반복되며 재귀가 일어난다.
+</span>     <span class="n">serializer</span><span class="p">.</span><span class="n">bind</span><span class="p">(</span><span class="s">''</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+     <span class="c1"># serializer.bind('', self)는 직렬화된 대댓글을 부모댓글에 연결한다.
+</span>     <span class="k">return</span> <span class="n">serializer</span><span class="p">.</span><span class="n">data</span>
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
 </ol>
 
 <h3 id="게시판-페이지의-프론트엔드">게시판 페이지의 프론트엔드</h3>
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">Goal</code> jinja2 문법을 사용하여 데이터 출력하기</li>
-  <li><code class="language-plaintext highlighter-rouge">Problem</code> 서버에서 받아온 데이터는 딕셔너리와 리스트가 복합된 형태로, key값과 item값을 둘 다 사용하는 방법을 몰랐다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code> for문과 <code class="language-plaintext highlighter-rouge">items()</code> 함수를 사용하여 출력했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Bootstrap</code>을 적극 활용하여 구성했다.
+    <ol>
+      <li><a href="https://getbootstrap.com/docs/5.2/components/collapse/">Collapse</a>
+        <ul>
+          <li>상단바 반응형 동작, 수정창, 삭제확인창</li>
+        </ul>
+      </li>
+      <li><a href="https://getbootstrap.com/docs/5.2/utilities/position/">Position</a>
+        <ul>
+          <li>버튼 배치</li>
+        </ul>
+      </li>
+      <li><a href="https://getbootstrap.com/docs/5.2/utilities/display/">Display property</a>
+        <ul>
+          <li>화면 크기에 따라 보여줄 요소와 숨길 요소를 설정하여 반응형 뷰 구현</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="가구-상점-페이지-프론트엔드">가구 상점 페이지 프론트엔드</h3>
+<ol>
+  <li>이정아님과 분업하여 나는 프론트엔드만 담당했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Bootstrap</code>의 <a href="https://getbootstrap.com/docs/5.2/layout/grid/#row-columns">Grid system</a>과 <a href="https://getbootstrap.com/docs/5.2/utilities/display/">Display property</a>을 이용하여 모바일에도 대응하도록 구현했다.</li>
 </ol>
 
 <p><br /></p>
 
 <h2 id="회고">회고</h2>
 <blockquote>
+  <p>시리얼라이저를 내가 사용할 수 있는 한 최선을 다해 활용하여 백엔드를 구성했다. 커스텀도 사용해보고, SerializerMethodField()도 이용하며 시리얼라이저의 사용에 많이 능숙해진 것 같아 뿌듯했다.</p>
+</blockquote>
 
+<blockquote>
+  <p>코드를 정리하고자 계속 신경썼지만 프로젝트의 볼륨이 이전과 다르게 커져서 views.py나 api.js는 board/article/comment로 분류하여 나누어야 관리했다. 이후 진행할 프로젝트들은 WM보다 더 큰 볼륨일텐데, 이런 프로젝트들에서는 어떻게 가독성 좋게 코드를 관리하는 것이 좋을지에 대해서 고민해보아야 겠다.</p>
+</blockquote>
+
+<blockquote>
+  <p>배포에 성공해서 캠프 사람들이나 친구들에게 사이트를 사용해보도록 부탁하고 피드백을 받았다. 실제로 사이트를 사용한 유저들의 피드백을 종합해보면 크게 버그 제보, 아쉽거나 불편했던 점, 추가되면 좋을 기능으로 분류할 수 있었는데, 이 소중한 의견들을 최대한 반영하고자 노력했다.<br />
+버그를 우선적으로 수정하고, 사용자들이 보다 편리하게 사용할 수 있는 기능들을 하나라도 더 추가하고자 팀원들이 밤늦게까지 최선을 다해 개발했다. 사용시 불편하거나 아쉬웠던 점을 중심으로 UI / UX 개선에 대한 피드백을 듣다보니, 개발하는 도중 사이트에 너무 익숙해져 미처 생각하지 못했던 부분들에 대한 지적도 있어 <code class="language-plaintext highlighter-rouge">새로운 시각의 중요성</code>을 깨달았다. 추가되었으면 좋겠다는 기능을 중심으로 개발할 기능의 <code class="language-plaintext highlighter-rouge">우선순위를 설정</code>하는 것에도 도움을 받았다.<br />
+이렇게 피드백들을 반영한 후에는 확실히 사이트가 사용하기 훨씬 편하게 바뀌어 있었다. 제작하는 중에도 나름대로 UI나 UX에 신경을 많이 썼는데도 사용자의 시선에서는 또 다르다는 것을 경험으로 배웠다.</p>
 </blockquote>
 
 
@@ -171,7 +299,7 @@
 
     <footer>
       <span>
-        &copy; <time datetime="2022-08-25 17:40:31 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
+        &copy; <time datetime="2022-08-26 04:43:31 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
       </span>
     </footer>
   </body>

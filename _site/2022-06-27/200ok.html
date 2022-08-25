@@ -53,8 +53,7 @@
 
 <h2 id="주요-기능">주요 기능</h2>
 <ol>
-  <li>JWT를 이용한 로그인</li>
-  <li>JWT를 이용한 사용자 인증</li>
+  <li>JWT를 이용한 로그인/사용자 인증</li>
   <li>이미지를 style transfer와 딥페이크를 이용해서 움직이는 그림처럼 변형</li>
   <li>방명록 작성 및 삭제</li>
   <li>시간이 오래 걸리는 작업을 멀티 프로세싱을 이용하여 처리</li>
@@ -91,22 +90,22 @@
   <tbody>
     <tr>
       <td style="text-align: left"><strong>이정아    </strong></td>
-      <td style="text-align: left">-</td>
+      <td style="text-align: left">메인 페이지, 딥러닝</td>
       <td style="text-align: center"><a href="https://github.com/zeonga1102"><code class="language-plaintext highlighter-rouge">🔗zeonga1102</code></a></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>노을🌱</strong></td>
-      <td style="text-align: left">-</td>
+      <td style="text-align: left">기숙사 별 페이지</td>
       <td style="text-align: center"><a href="https://github.com/minkkky"><code class="language-plaintext highlighter-rouge">🔗minkkky</code></a></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>이현경</strong></td>
-      <td style="text-align: left">-    </td>
+      <td style="text-align: left">개인 페이지</td>
       <td style="text-align: center"><a href="https://github.com/LULULALA2"><code class="language-plaintext highlighter-rouge">🔗LULULALA2</code></a></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>김동근</strong></td>
-      <td style="text-align: left">-</td>
+      <td style="text-align: left">로그인 및 회원가입 페이지, AWS 배포    </td>
       <td style="text-align: center"><a href="https://github.com/yinmsk"><code class="language-plaintext highlighter-rouge">🔗yinmsk</code></a></td>
     </tr>
   </tbody>
@@ -115,38 +114,91 @@
 <p><br /></p>
 
 <h2 id="스킬-및-사용툴">스킬 및 사용툴</h2>
-<p><code class="language-plaintext highlighter-rouge">Python</code>, <code class="language-plaintext highlighter-rouge">Django</code></p>
+<p><code class="language-plaintext highlighter-rouge">Python</code>, <code class="language-plaintext highlighter-rouge">Django</code>, <code class="language-plaintext highlighter-rouge">DjangoRestFramwork</code></p>
 
 <p><br /></p>
 
 <h2 id="나의-역할">나의 역할</h2>
-
-<h3 id="회원가입로그인-페이지-백엔드">회원가입/로그인 페이지 백엔드</h3>
-
-<h3 id="회원가입로그인-페이지-프론트엔드">회원가입/로그인 페이지 프론트엔드</h3>
-
-<h3 id="마이-페이지의-백엔드">마이 페이지의 백엔드</h3>
+<h3 id="backendpython와-frontendhtml-css-javascript를-분리하여-작동시키기">Backend(python)와 Frontend(html, css, javascript)를 분리하여 작동시키기</h3>
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">Goal</code> 해당 이용자가 작성한 일기를 월별로 불러오기</li>
-  <li>가장 최근에 글을 쓴 달부터 글을 표시하기 위해서 데이터를 DB에서 불러올 때 내림차순으로 sort하여 가져왔다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Problem</code> 월별로 데이터를 구분하여 출력할 수 없었다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code>  for문과 try문을 이용하여 데이터를 월별로 묶어주었다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Problem</code> 월별로 내림차순 정렬된 것은 좋았으나, 일별로도 내림차순 정렬되어 원하는 형태가 아니었다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code>   date에서 년월/날짜 값을 뽑아낸 후 sort()를 이용하여 년월 값으로는 내림차순 정렬을 하고, 날짜 값으로는 오름차순 정렬을 하는 <code class="language-plaintext highlighter-rouge">다중조건</code>으로 정렬하여 해결했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> url을 분리하여 변수로 선언하고, <code class="language-plaintext highlighter-rouge">async function</code>과 <code class="language-plaintext highlighter-rouge">await fetch</code>를 이용하여 분리된 백엔드와 프론트엔드 사이에서도 데이터를 주고받을 수 있게 했다.</li>
 </ol>
 
-<h3 id="마이-페이지의-프론트엔드">마이 페이지의 프론트엔드</h3>
+<h3 id="기숙사-별-페이지-백엔드">기숙사 별 페이지 백엔드</h3>
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">Goal</code> jinja2 문법을 사용하여 데이터 출력하기</li>
-  <li><code class="language-plaintext highlighter-rouge">Problem</code> 서버에서 받아온 데이터는 딕셔너리와 리스트가 복합된 형태로, key값과 item값을 둘 다 사용하는 방법을 몰랐다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code> for문과 <code class="language-plaintext highlighter-rouge">items()</code> 함수를 사용하여 출력했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> 원하는 데이터를 원하는 형태로 만들어서 내보내기</li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> 한 페이지에서 요구하는 데이터가 많았다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> 필요하다고 생각되는 정보를 각각 직렬화한 뒤 하나의 딕셔너리로 만들어 response했다.
+    <ul>
+      <li>lounge_data
+        <ul>
+          <li>user : 로그인 한 유저의 표시할 정보 (아이디, 이름, 초상화, 소속 기숙사)</li>
+          <li>house : 로그인한 유저의 소속 기숙사 정보</li>
+          <li>count: 추후 차트화 하기 위해 라벨과 데이터를 리스트로 정리한 데이터</li>
+          <li>board: 방명록의 내용을 최신순으로 정렬하여 표시할 목적의 데이터</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="기숙사-별-페이지-프론트엔드">기숙사 별 페이지 프론트엔드</h3>
+<p><a href="https://html5up.net/directive">🔗html template <code class="language-plaintext highlighter-rouge">directive</code></a> 사용하여 디자인을 구성했다.</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> 유저의 기숙사에 따라 기숙사 로고와 소개 문구를 다르게 출력하기</li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> class명에 미리 정의된 로고 데이터 클래스를 추가하는 방식으로 해결했다.
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c">/* Logo CSS */</span>
+ <span class="nc">.gr-logo</span> <span class="p">{</span>
+     <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url("../../images/gr.png")</span><span class="p">;</span>
+     <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+     <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+     <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+ <span class="p">}</span>
+ <span class="nc">.sl-logo</span> <span class="p">{</span><span class="err">...</span><span class="p">}</span>
+ <span class="nc">.rc-logo</span> <span class="p">{</span><span class="err">...</span><span class="p">}</span>
+ <span class="nc">.hf-logo</span> <span class="p">{</span><span class="err">...</span><span class="p">}</span>
+</code></pre></div>    </div>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">dormitory_logo</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="dl">"</span><span class="s2">Gryffindor</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">gr-logo</span><span class="dl">"</span><span class="p">,</span>
+     <span class="dl">"</span><span class="s2">Hufflepuff</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hf-logo</span><span class="dl">"</span><span class="p">,</span>
+     <span class="dl">"</span><span class="s2">Slytherin</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">sl-logo</span><span class="dl">"</span><span class="p">,</span>
+     <span class="dl">"</span><span class="s2">Ravenclaw</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">rc-logo</span><span class="dl">"</span>
+   <span class="p">}</span>
+   <span class="nx">my_dormitory</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">dormitory_logo</span><span class="p">[</span><span class="nx">data</span><span class="p">.</span><span class="nx">house</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="p">]}</span><span class="s2">`</span>
+
+   <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">house-logo</span><span class="dl">"</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">my_dormitory</span><span class="p">);</span>
+   <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">house-name</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerText</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">house</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span>
+   <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">house-desc</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerText</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">house</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">desc</span><span class="p">}</span><span class="s2">`</span>
+</code></pre></div>    </div>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> 백엔드와 프론트엔드를 분리한 상태에서 차트 그려주는 함수 동작하게 만들기</li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> 스크립트를 문서 내 하단에 두고, 실행해도 원하는대로 data 값이 들어가지 않아 차트가 제대로 그려지지 않았다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> 차트를 그리는 함수가 canvus보다 아래에 있어야 하므로, load_lounge()의 가장 밑에서 차트를 그리도록 차트를 그리는 함수의 위치를 조정하니 오류 없이 차트가 잘 그려졌다.
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c">&lt;!--  loading  --&gt;</span>
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+         <span class="nx">load_lounge</span><span class="p">()}</span>
+     <span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"canvas-container"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"pie-chart-students"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+     <span class="nt">&lt;canvas</span> <span class="na">id=</span><span class="s">"pie-chart-board"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span><span class="nt">&gt;&lt;/canvas&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+</code></pre></div>    </div>
+  </li>
 </ol>
 
 <p><br /></p>
 
 <h2 id="회고">회고</h2>
 <blockquote>
+  <p>DRF도, 시리얼라이저도 처음 사용해보았는데, 모르는 것 투성이었다. 프린트문을 엄청 찍어가며 몸으로 부딪치며 익혀나갔다.</p>
+</blockquote>
 
+<blockquote>
+  <p>이번에도 컨셉을 뚜렷하게 잡았고, 그에 맞게 예쁘게 잘 구현한 프론트를 보니 뿌듯했다. 하지만 프론트에서 데이터를 이렇게 예쁘게 보여주기 위해서는 백엔드에서 사용하기 좋게 필요한 데이터를 잘 정리해서 보내주는 게 얼마나 중요한지도 이번 프로젝트를 진행하며 알게 되었다. 그걸 위해서는 다음 프로젝트에서는 시리얼라이저의 사용에 더 능숙해져야겠다.</p>
 </blockquote>
 
 
@@ -167,7 +219,7 @@
 
     <footer>
       <span>
-        &copy; <time datetime="2022-08-25 04:13:35 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
+        &copy; <time datetime="2022-08-25 13:56:36 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
       </span>
     </footer>
   </body>

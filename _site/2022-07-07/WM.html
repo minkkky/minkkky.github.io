@@ -49,19 +49,21 @@
 <hr />
 <p>딥페이크를 이용한 움직이는 사진이 들어간 시민증을 제작해주며, 마이룸 꾸미기 기능을 제공하는 커뮤니티 사이트</p>
 
-<p><a href="https://tv.kakao.com/v/430933218"><code class="language-plaintext highlighter-rouge">🔗시연영상</code></a></p>
+<p><a href="https://tv.kakao.com/v/430933218"><code class="language-plaintext highlighter-rouge">🔗시연영상 (피드백 반영 전)</code></a><br />
+<a href="https://tv.kakao.com/v/431224675"><code class="language-plaintext highlighter-rouge">🔗시연영상 (피드백 반영 후)</code></a></p>
 
 <h2 id="주요-기능">주요 기능</h2>
-<ol>
+<ul>
   <li>JWT를 이용한 로그인</li>
-  <li>JWT를 이용한 사용자 인증</li>
-  <li>이미지를 style transfer와 딥페이크를 이용해서 움직이는 그림처럼 변형</li>
-  <li>방명록 작성 및 삭제</li>
-  <li>시간이 오래 걸리는 작업을 멀티 프로세싱을 이용하여 처리</li>
-  <li>S3를 이용한 파일 처리</li>
-  <li>차트를 이용해서 데이터를 시각적으로 표현</li>
-  <li>여러 css 애니메이션 효과</li>
-</ol>
+  <li>딥페이크를 통한 움직이는 사진 생성</li>
+  <li>AWS S3에 이미지 저장</li>
+  <li>게시판 페이지네이션</li>
+  <li>바닐라 JS로 구현한 방 꾸미기 기능
+    <ul>
+      <li>가구 상점에서 coin으로 가구 구매 가능</li>
+    </ul>
+  </li>
+</ul>
 
 <p><br /></p>
 
@@ -91,22 +93,22 @@
   <tbody>
     <tr>
       <td style="text-align: left"><strong>이정아    </strong></td>
-      <td style="text-align: left">-</td>
+      <td style="text-align: left">시민증 발급 페이지</td>
       <td style="text-align: center"><a href="https://github.com/zeonga1102"><code class="language-plaintext highlighter-rouge">🔗zeonga1102</code></a></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>노을🌱</strong></td>
-      <td style="text-align: left">-</td>
+      <td style="text-align: left">게시판 페이지</td>
       <td style="text-align: center"><a href="https://github.com/minkkky"><code class="language-plaintext highlighter-rouge">🔗minkkky</code></a></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>이현경</strong></td>
-      <td style="text-align: left">-    </td>
+      <td style="text-align: left">로그인 및 회원가입 페이지, AWS 배포    </td>
       <td style="text-align: center"><a href="https://github.com/LULULALA2"><code class="language-plaintext highlighter-rouge">🔗LULULALA2</code></a></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>김동근</strong></td>
-      <td style="text-align: left">-</td>
+      <td style="text-align: left">마이 페이지</td>
       <td style="text-align: center"><a href="https://github.com/yinmsk"><code class="language-plaintext highlighter-rouge">🔗yinmsk</code></a></td>
     </tr>
   </tbody>
@@ -115,27 +117,30 @@
 <p><br /></p>
 
 <h2 id="스킬-및-사용툴">스킬 및 사용툴</h2>
-<p><code class="language-plaintext highlighter-rouge">Python</code>, <code class="language-plaintext highlighter-rouge">Django</code></p>
+<p><code class="language-plaintext highlighter-rouge">Python</code>, <code class="language-plaintext highlighter-rouge">Django</code>, <code class="language-plaintext highlighter-rouge">DjangoRestFramwork</code></p>
 
 <p><br /></p>
 
 <h2 id="나의-역할">나의 역할</h2>
 
-<h3 id="회원가입로그인-페이지-백엔드">회원가입/로그인 페이지 백엔드</h3>
-
-<h3 id="회원가입로그인-페이지-프론트엔드">회원가입/로그인 페이지 프론트엔드</h3>
-
-<h3 id="마이-페이지의-백엔드">마이 페이지의 백엔드</h3>
+<h3 id="api-설계">API 설계</h3>
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">Goal</code> 해당 이용자가 작성한 일기를 월별로 불러오기</li>
-  <li>가장 최근에 글을 쓴 달부터 글을 표시하기 위해서 데이터를 DB에서 불러올 때 내림차순으로 sort하여 가져왔다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Problem</code> 월별로 데이터를 구분하여 출력할 수 없었다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code>  for문과 try문을 이용하여 데이터를 월별로 묶어주었다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Problem</code> 월별로 내림차순 정렬된 것은 좋았으나, 일별로도 내림차순 정렬되어 원하는 형태가 아니었다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> 처음에는 url은 최소로 적고, method의 종류에 따라 다른 동작을 하는 방식으로 진행하려고 했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> 하지만 실제로 동작하는 것을 고려해보니 url의 가독성이 너무 떨어졌다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> 어떤 method를 써서 어떤 동작을 하는 url인지 바로 알 수 있도록 형태를 정리했다.</li>
+</ol>
+
+<h3 id="게시판-페이지의-백엔드">게시판 페이지의 백엔드</h3>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">Goal</code> 이미지 파일은 S3에 올리고 db에는 url만 저장하기</li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> 띄어쓰기가 들어있는 경우도 있고, 파일명이 중복되는 경우 등 파일명을 그대로 사용하여 업로드했을 때 url을 사용하기 어려운 문제가 있었다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> 업로드할 때 파일명을 따로 만들어주었다.<br />
+현재 시각을 초 단위까지 받아 파일명으로 쓰고, 작성자의 id도 넣어 혹시라도 여러 명이 동시에 글을 작성했을 때에도 파일명이 중복되는 문제가 없도록 했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> 코드를 작성하고 form data로 글 제목, 글 내용, 파일을 전송해보니 db에 잘 저장되었으나, 이미지를 첨부하지 않았을 때는 오류가 발생했다. 게시글에 이미지 파일을 올리는 것이 필수가 아니기 때문에 이에 대한 처리가 필요했다.</li>
   <li><code class="language-plaintext highlighter-rouge">Action</code>   date에서 년월/날짜 값을 뽑아낸 후 sort()를 이용하여 년월 값으로는 내림차순 정렬을 하고, 날짜 값으로는 오름차순 정렬을 하는 <code class="language-plaintext highlighter-rouge">다중조건</code>으로 정렬하여 해결했다.</li>
 </ol>
 
-<h3 id="마이-페이지의-프론트엔드">마이 페이지의 프론트엔드</h3>
+<h3 id="게시판-페이지의-프론트엔드">게시판 페이지의 프론트엔드</h3>
 <ol>
   <li><code class="language-plaintext highlighter-rouge">Goal</code> jinja2 문법을 사용하여 데이터 출력하기</li>
   <li><code class="language-plaintext highlighter-rouge">Problem</code> 서버에서 받아온 데이터는 딕셔너리와 리스트가 복합된 형태로, key값과 item값을 둘 다 사용하는 방법을 몰랐다.</li>
@@ -165,7 +170,7 @@
 
     <footer>
       <span>
-        &copy; <time datetime="2022-08-25 04:13:35 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
+        &copy; <time datetime="2022-08-25 13:56:36 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
       </span>
     </footer>
   </body>

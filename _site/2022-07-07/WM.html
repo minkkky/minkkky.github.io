@@ -125,9 +125,9 @@
 
 <h3 id="api-설계">API 설계</h3>
 <ol>
-  <li><code class="language-plaintext highlighter-rouge">Goal</code> 처음에는 url은 최소로 적고, method의 종류에 따라 다른 동작을 하는 방식으로 진행하려고 했다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Problem</code> 하지만 실제로 동작하는 것을 고려해보니 url의 가독성이 너무 떨어졌다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code> 어떤 method를 써서 어떤 동작을 하는 url인지 바로 알 수 있도록 형태를 정리했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Problem</code> url은 최소로 적고, method의 종류에 따라 다른 동작을 하는 방식으로 진행하려고 했으나, 실제로 동작하는 것을 고려해보니 url의 가독성이 너무 떨어졌다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code> 어떤 method를 써서 어떤 동작을 하는 url인지 바로 알 수 있도록 형태를 정리했다.<br />
+<a href="https://github.com/cmjcum/WM_back/blob/master/board/urls.py"><code class="language-plaintext highlighter-rouge">🔖Code #board/urls.py</code></a></li>
 </ol>
 
 <h3 id="게시판-페이지의-백엔드">게시판 페이지의 백엔드</h3>
@@ -137,7 +137,8 @@
   <li><code class="language-plaintext highlighter-rouge">Action</code> 업로드할 때 파일명을 따로 만들어주었다.<br />
 현재 시각을 초 단위까지 받아 파일명으로 쓰고, 작성자의 id도 넣어 혹시라도 여러 명이 동시에 글을 작성했을 때에도 파일명이 중복되는 문제가 없도록 했다.</li>
   <li><code class="language-plaintext highlighter-rouge">Problem</code> 코드를 작성하고 form data로 글 제목, 글 내용, 파일을 전송해보니 db에 잘 저장되었으나, 이미지를 첨부하지 않았을 때는 오류가 발생했다. 게시글에 이미지 파일을 올리는 것이 필수가 아니기 때문에 이에 대한 처리가 필요했다.</li>
-  <li><code class="language-plaintext highlighter-rouge">Action</code>   date에서 년월/날짜 값을 뽑아낸 후 sort()를 이용하여 년월 값으로는 내림차순 정렬을 하고, 날짜 값으로는 오름차순 정렬을 하는 <code class="language-plaintext highlighter-rouge">다중조건</code>으로 정렬하여 해결했다.</li>
+  <li><code class="language-plaintext highlighter-rouge">Action</code>  <br />
+<a href="https://github.com/cmjcum/WM_back/blob/master/board/views_article.py#L84"><code class="language-plaintext highlighter-rouge">🔖Code #board/views_article.py</code></a></li>
 </ol>
 
 <h3 id="게시판-페이지의-프론트엔드">게시판 페이지의 프론트엔드</h3>
@@ -170,7 +171,7 @@
 
     <footer>
       <span>
-        &copy; <time datetime="2022-08-25 13:56:36 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
+        &copy; <time datetime="2022-08-25 17:40:31 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
       </span>
     </footer>
   </body>

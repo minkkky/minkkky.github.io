@@ -134,6 +134,25 @@
 <p><br /></p>
 
 <h2 id="나의-역할">나의 역할</h2>
+<ol>
+  <li>각 감정의 2번 젤리티콘 및 젤리모디 로고 제작</li>
+  <li>데이터셋 전처리 - <code class="language-plaintext highlighter-rouge">기쁨</code> 감정 데이터 전처리 담당</li>
+  <li>사물인식 모델 제작 <a href="https://colab.research.google.com/drive/1ZfSkro5jsiXD6q_FnazaJv5CHzoJFHtH?usp=sharing"><code class="language-plaintext highlighter-rouge">🔗colab</code></a></li>
+  <li>메인 페이지 백엔드
+    <ul>
+      <li>로그인 유저의 일기를 <code class="language-plaintext highlighter-rouge">월별로 분류</code>하고 월별:내림차순, 일별:오름차순으로 <code class="language-plaintext highlighter-rouge">정렬</code>하기 <a href="https://github.com/cmjcum/Jellymodi_team/blob/master/app.py#L18"><code class="language-plaintext highlighter-rouge">🔗app.py#L18</code></a></li>
+    </ul>
+  </li>
+  <li>메인 페이지 프론트엔드
+    <ul>
+      <li>jinja2 문법 사용</li>
+      <li>이모티콘 리스트를 통해 나의 감정 추이를 시각적으로 확인할 수 있음<a href="https://github.com/cmjcum/Jellymodi_team/blob/master/templates/index.html"><code class="language-plaintext highlighter-rouge">🔗templates/index.html</code></a></li>
+      <li>MideaQuery를 이용한 반응형 페이지 <a href="https://github.com/cmjcum/Jellymodi_team/blob/master/static/css/list.css#L153"><code class="language-plaintext highlighter-rouge">🔗static/css/list.css#L153</code></a></li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
 
 <h3 id="한국인-얼굴-표정-데이터를-학습시킨-머신러닝-사물인식-모델-제작">한국인 얼굴 표정 데이터를 학습시킨 머신러닝 사물인식 모델 제작</h3>
 <ol>
@@ -156,7 +175,7 @@
       <li>인식률을 높이기 위해 얼굴만 크롭하여 이미지를 가공</li>
     </ol>
   </li>
-  <li>Colab에서 팀원들이 각자 모델을 제작한 후 가장 감정 인식률이 높은 모델 채택 <a href="https://colab.research.google.com/drive/1ZfSkro5jsiXD6q_FnazaJv5CHzoJFHtH?usp=sharing"><code class="language-plaintext highlighter-rouge">🔗colab</code></a></li>
+  <li>Colab에서 팀원들이 각자 모델을 제작한 후 가장 감정 인식률이 높은 모델 채택</li>
 </ol>
 
 <h3 id="메인-페이지의-백엔드">메인 페이지의 백엔드</h3>
@@ -249,7 +268,7 @@
 
     <footer>
       <span>
-        &copy; <time datetime="2022-08-26 04:43:31 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
+        &copy; <time datetime="2022-08-26 18:52:26 +0900">2022</time> 노을 Noh Eul. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
       </span>
     </footer>
   </body>

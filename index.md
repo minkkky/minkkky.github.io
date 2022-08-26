@@ -32,9 +32,8 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 
 # Projects
 
-|_Project 4._|[팀 프로젝트]&nbsp;🚀&nbsp;Make Migrations|
+|_Project 4._|[팀 프로젝트]&nbsp;🚀&nbsp;Make Migrations [`🔗datail/Make-Migrations`](/2022-07-07/WM)|
 |:---|:---|
-||[`🔗 portfolio/Make-Migrations`](/2022-07-07/WM)|
 |**Desc**|딥페이크를 이용한 움직이는 사진이 들어간 시민증을 제작해주며, 마이룸 꾸미기 기능을 제공하는 커뮤니티 사이트|
 |**Tech**|`python`, `django`, `javascript`, `DRF`, `deepfake`, `docker`, `AWS`, `postgreSQL`|
 |**Duration&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**|2022-07-07 ~ 2022-08-16|
@@ -42,9 +41,8 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 
 <br/>
 
-|_Project 3._|[팀 프로젝트]&nbsp;🎩&nbsp;녹턴앨리 지하 2층 불법입학센터|
+|_Project 3._|[팀 프로젝트]&nbsp;🎩&nbsp;녹턴앨리 지하 2층 불법입학센터 [`🔗datail/200ok`](/2022-06-27/200ok)|
 |:---|:---|
-||[`🔗 portfolio/200ok`](/2022-06-27/200ok)|
 |**Desc**|딥페이크와 스타일 트랜스퍼 이용해 사진을 해리포터의 초상화처럼 움직이게 만들고, 간단한 퀴즈를 통해 나의 기숙사를 배정해주는 서비스|
 |**Tech**|`python`, `django`, `DRF`, `deepfake`, `style transfer`|
 |**Duration&nbsp;&nbsp;&nbsp;&nbsp;**|2022-06-27 ~ 2022-07-04|
@@ -52,9 +50,8 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 
 <br/>
 
-|_Project 2._|[팀 프로젝트]&nbsp;🤖&nbsp;웹소설 일타강사 AI의 기막힌 추천|
+|_Project 2._|[팀 프로젝트]&nbsp;🤖&nbsp;웹소설 일타강사 AI의 기막힌 추천 [`🔗datail/webtachu`](/2022-06-02/webtachu)|
 |:---|:---|
-||[`🔗 portfolio/webtachu`](/2022-06-02/webtachu)|
 |**Desc**|자연어 처리를 이용해 웹소설의 스토리를 벡터 임베딩하여 사용자가 좋아한 작품의 줄거리와 유사도가 높은 작품을 추천해주는 서비스|
 |**Tech**|`python`, `django`, `MeCab`, `Doc2Vec`|
 |**Duration&nbsp;&nbsp;&nbsp;&nbsp;**|2022-06-02 ~ 2022-06-13|
@@ -62,9 +59,8 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 
 <br/>
 
-|_Project 1._|[팀 프로젝트]&nbsp;🍮&nbsp;Jellymodi|
+|_Project 1._|[팀 프로젝트]&nbsp;🍮&nbsp;Jellymodi [`🔗datail/jellymodi`](/2022-05-18/jellymodi)|
 |:---|:---|
-||[`🔗 portfolio/jellymodi`](/2022-05-18/jellymodi)|
 |**Desc**|사물인식 머신러닝을 통해 사진 상의 표정을 분석하여 감정 이모티콘으로 바꾸어 하루의 기분을 기록하는 일기 작성 서비스|
 |**Tech**|`python`, `flask`, `mongoDB`, `ajax`, `OpenCV`|
 |**Duration&nbsp;&nbsp;&nbsp;&nbsp;**|2022-05-18 ~ 2022-05-25|

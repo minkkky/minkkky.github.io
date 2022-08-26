@@ -65,6 +65,17 @@ type: 내일배움캠프
 <br/>
 
 ## 나의 역할
+1. 각 감정의 2번 젤리티콘 및 젤리모디 로고 제작
+1. 데이터셋 전처리 - `기쁨` 감정 데이터 전처리 담당
+1. 사물인식 모델 제작 [`🔗colab`](https://colab.research.google.com/drive/1ZfSkro5jsiXD6q_FnazaJv5CHzoJFHtH?usp=sharing)
+1. 메인 페이지 백엔드
+    * 로그인 유저의 일기를 `월별로 분류`하고 월별:내림차순, 일별:오름차순으로 `정렬`하기 [`🔗app.py#L18`](https://github.com/cmjcum/Jellymodi_team/blob/master/app.py#L18)
+1. 메인 페이지 프론트엔드
+    * jinja2 문법 사용
+    * 이모티콘 리스트를 통해 나의 감정 추이를 시각적으로 확인할 수 있음[`🔗templates/index.html`](https://github.com/cmjcum/Jellymodi_team/blob/master/templates/index.html)
+    * MideaQuery를 이용한 반응형 페이지 [`🔗static/css/list.css#L153`](https://github.com/cmjcum/Jellymodi_team/blob/master/static/css/list.css#L153)
+
+<br/>
 
 ### 한국인 얼굴 표정 데이터를 학습시킨 머신러닝 사물인식 모델 제작
 1. 데이터셋 : AIHub - [한국인 감정인식을 위한 복합 영상](https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=realm&dataSetSn=82)
@@ -77,7 +88,7 @@ type: 내일배움캠프
         * `Action` 기쁨, 분노, 슬픔, 중립 4가지 감정만 사용
     1. 기쁨 감정의 데이터 중 표정이 뚜렷한 데이터를 약 1천 건 선별
     1. 인식률을 높이기 위해 얼굴만 크롭하여 이미지를 가공
-1. Colab에서 팀원들이 각자 모델을 제작한 후 가장 감정 인식률이 높은 모델 채택 [`🔗colab`](https://colab.research.google.com/drive/1ZfSkro5jsiXD6q_FnazaJv5CHzoJFHtH?usp=sharing)
+1. Colab에서 팀원들이 각자 모델을 제작한 후 가장 감정 인식률이 높은 모델 채택 
 
 ### 메인 페이지의 백엔드  
 1. `Goal` 해당 이용자가 작성한 일기를 월별로 불러오기

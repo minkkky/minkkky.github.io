@@ -3,8 +3,9 @@ layout: about
 ---
 
 # About me
-서브컬처에 관심이 많은 주니어 백엔드 개발자🌱입니다.<br/>
-Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝트를 진행했습니다.  
+서브컬처에 관심이 많은 주니어 개발자🌱입니다.<br/>
+Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝트를 진행했습니다.<br/>
+프론트엔드에도 관심이 있어 React도 만져보는 중!<br/>
 사진은 딥페이크로 움직이게 만든 젤리티콘!
 
 <br/>
@@ -21,7 +22,7 @@ Python 기반의 Flask, Django, DRF를 이용한 웹페이지 제작 프로젝�
 ## Skill
 
 |:---|---|---|---|
-|**Code**|![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=Python&logoColor=white)|![Django](https://img.shields.io/badge/-Django-092E20?style=for-the-badge&logo=Django&logoColor=white)||
+|**Code**|![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=Python&logoColor=white)|![Django](https://img.shields.io/badge/-Django-092E20?style=for-the-badge&logo=Django&logoColor=white)|[JavaScript](https://img.shields.io/badge/-javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)|[React](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=white)||
 |**Design** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|![HTML](https://img.shields.io/badge/-HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white)|![CSS](https://img.shields.io/badge/-CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white)|![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?style=for-the-badge&logo=Bootstrap&logoColor=white)|
 |**DB**|![MongoDB](https://img.shields.io/badge/-MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white)|![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white)||
 |**Tools**|![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white)|![Visual Studio Code](https://img.shields.io/badge/-VSCode-007ACC?style=for-the-badge&logo=Visual Studio Code&logoColor=white)|![Postman](https://img.shields.io/badge/-Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)|
